@@ -1,0 +1,51 @@
+{
+  "Product Dashboard.pbix": {
+    "output": "Product_Dashboard_review.pbix",
+    "changes": [
+      "Report/definition/pages/ReportSection5d6bf0efcb22de6e5d80/visuals/189e56682b27b44bcddf/visual.json",
+      "Report/definition/pages/e3bac61c205d4308d870/page.json"
+    ],
+    "unchanged_entries_verified": true,
+    "page_navigation_checked": true,
+    "desktop_validation": "pending"
+  },
+  "spotify.pbix": {
+    "output": "spotify_review.pbix",
+    "changes": [
+      "Report/definition/pages/20b45968e00ce0604521/page.json",
+      "Report/definition/pages/20b45968e00ce0604521/visuals/89c072236089321e8a05/visual.json",
+      "Report/definition/pages/20b45968e00ce0604521/visuals/fd52644651c0e7eb2065/visual.json"
+    ],
+    "unchanged_entries_verified": true,
+    "page_navigation_checked": true,
+    "desktop_validation": "pending"
+  },
+  "business_insight 360.pbix": {
+    "output": "business_insight_360_review.pbix",
+    "changes": [
+      "Report/definition/pages/ReportSection83bf87fca58bbb50be50/visuals/9ccd4434c45e60a002dd/visual.json",
+      "Report/definition/pages/ReportSection83bf87fca58bbb50be50/visuals/a4f7b4fc30e805005098/visual.json",
+      "Report/definition/pages/ReportSection83bf87fca58bbb50be50/visuals/b09d26b54a05026bacc3/visual.json",
+      "Report/definition/pages/ReportSection83bf87fca58bbb50be50/visuals/c9363ac6e60e03b7413c/visual.json",
+      "Report/definition/pages/ReportSection83bf87fca58bbb50be50/visuals/ccd4a6e3bc747b8a6042/visual.json"
+    ],
+    "unchanged_entries_verified": true,
+    "page_navigation_checked": true,
+    "desktop_validation": "pending"
+  },
+  "apple product.pbix": {
+    "output": "apple_product_review.pbix",
+    "changes": [
+      "Report/definition/pages/2d9a6bdce64a8840a110/page.json",
+      "Report/definition/pages/2d9a6bdce64a8840a110/visuals/2d935961d4d8bea14c09/visual.json",
+      "Report/definition/pages/2d9a6bdce64a8840a110/visuals/8eda7e4daaffe7ae5af1/visual.json",
+      "Report/definition/pages/2d9a6bdce64a8840a110/visuals/920360a63e89d2f102c8/visual.json",
+      "Report/definition/pages/2d9a6bdce64a8840a110/visuals/ba450f58f37098f85de6/visual.json",
+      "Report/definition/pages/2d9a6bdce64a8840a110/visuals/fcbfbc3a8751abc118b2/visual.json",
+      "Report/definition/pages/2d9a6bdce64a8840a110/visuals/feb9bf0b6417f523cd4d/visual.json"
+    ],
+    "unchanged_entries_verified": true,
+    "page_navigation_checked": true,
+    "desktop_validation": "pending"
+  }
+}

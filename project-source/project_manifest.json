@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "spotify",
+    "title": "Spotify Track Explorer",
+    "summary": "Compare track popularity, release patterns and audio characteristics.",
+    "features": [
+      "Artist, track and date filters",
+      "Stream ranking and release-date charts",
+      "Audio-feature cards, including danceability, acousticness and valence",
+      "Deneb and HTML custom visuals"
+    ],
+    "limitations": "Release dates describe music releases, not daily listening activity. The preview reflects one saved selection; it is not a live dashboard."
+  },
+  {
+    "slug": "business-insight",
+    "title": "Business Insight 360",
+    "summary": "Explore finance, sales, marketing and supply-chain performance.",
+    "features": [
+      "Finance: profit-and-loss reporting and benchmarks",
+      "Sales: customer and product comparisons",
+      "Marketing: regional and product performance",
+      "Supply chain: forecast accuracy, net error and risk"
+    ],
+    "limitations": "The file contains four analytical pages plus a home page. An Executive View is not included. The report is a portfolio exercise; company branding does not establish a client relationship."
+  },
+  {
+    "slug": "apple-products",
+    "title": "Apple Product Performance",
+    "summary": "Compare product sales, quantities and year-over-year performance.",
+    "features": [
+      "Product and date slicers",
+      "Sales and quantity cards",
+      "Monthly sales and country comparisons",
+      "Previous-year sales and year-over-year indicators"
+    ],
+    "limitations": "This Apple-product-themed portfolio report is not official Apple financial reporting. Dataset source and currency still need confirmation before numerical findings are published."
+  },
+  {
+    "slug": "product-fulfilment",
+    "title": "Product Order Fulfilment",
+    "summary": "Explore delivered, returned, lost and back-ordered products.",
+    "features": [
+      "Home-page navigation to the analysis page",
+      "Delivered, returned, lost and back-order views",
+      "Order-date and product filters",
+      "Status trends and product-line breakdowns"
+    ],
+    "limitations": "Quantities, order counts and line totals are distinct measures. Status percentages need a consistent denominator; distinct-order calculations require a Desktop check."
+  }
+]
