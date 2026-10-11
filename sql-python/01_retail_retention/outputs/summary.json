@@ -1,0 +1,21 @@
+{
+  "positive_value_gbp": 10027891.863998247,
+  "customers": 4297,
+  "weighted_month_one_retention": 0.2365374937091092,
+  "test_month": "2011-11",
+  "train_snapshot_months": [
+    "2011-08",
+    "2011-09",
+    "2011-10"
+  ],
+  "test_customers": 3974,
+  "purchase_prevalence": 0.33744338198288876,
+  "average_precision": 0.634419719775543,
+  "roc_auc": 0.7346935712135283,
+  "brier": 0.18630388323206729,
+  "constant_train_rate_brier": 0.22789763864528512,
+  "top_20pct_precision": 0.6729559748427673,
+  "top_20pct_lift": 1.9942781834639502,
+  "recency_rule_top20_lift": 1.4276795219938188,
+  "top_group_n": 795
+}

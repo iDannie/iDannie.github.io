@@ -13,4 +13,8 @@ Live website: https://idannie.github.io/
 
 GitHub Pages publishes the root of the main branch using the repository's existing Pages configuration. Changes committed to main are published automatically.
 
-Project links, screenshots, and two additional Excel project descriptions will be added when provided. Current project covers are illustrative.
+
+
+## SQL and Python projects
+
+[Browse the three projects](sql-python/README.md).

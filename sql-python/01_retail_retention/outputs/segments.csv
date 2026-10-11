@@ -1,0 +1,5 @@
+segment,customers,positive_value_gbp,median_recency_days
+Recent repeat,1143,5663850.970999993,11.0
+Other repeat,1336,1648300.2019999991,55.0
+One observed order,1538,631751.5110000002,125.0
+Lapsed repeat,280,449312.4300000004,141.0

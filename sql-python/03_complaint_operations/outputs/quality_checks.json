@@ -1,0 +1,16 @@
+{
+  "download_rows": 21473,
+  "analysis_rows": 21438,
+  "excluded_outside_2024_or_product": 35,
+  "invalid_received_dates": 0,
+  "missing_complaint_ids": 0,
+  "duplicate_complaint_ids": 0,
+  "negative_forwarding_intervals": 0,
+  "unknown_timeliness": 0,
+  "sql_pandas_count_reconcile": true,
+  "monthly_total_reconcile": true,
+  "dimension_join_preserves_rows": true,
+  "issue_total_reconcile": true,
+  "late_label_count_reconcile": true,
+  "wilson_intervals_bounded": true
+}

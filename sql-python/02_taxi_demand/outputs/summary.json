@@ -1,0 +1,11 @@
+{
+  "source_rows": 2964624,
+  "qualified_pickup_records": 2914490,
+  "operational_records": 2848985,
+  "top_training_zone": "JFK Airport",
+  "holdout_zone_hours": 1680,
+  "best_backtest_model": "last_week",
+  "best_wape": 0.14624833749271485,
+  "poisson_wape": 0.24578105286692292,
+  "last_week_wape": 0.14624833749271485
+}

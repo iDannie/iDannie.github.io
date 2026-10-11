@@ -1,0 +1,18 @@
+{
+  "retrieved_utc": "2026-10-10",
+  "notes": "Full source file; 2010-12-01 through 2011-12-09. Analysis ends 2011-11-30 to avoid a partial December. Source metadata says no missing values, but the file is audited independently.",
+  "files": [
+    {
+      "file": "retail.zip",
+      "url": "https://archive.ics.uci.edu/static/public/352/online%2Bretail.zip",
+      "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "bytes": 23715478
+    }
+  ],
+  "references": [
+    {
+      "label": "Chen, D. (2015). Online Retail. UCI. DOI: 10.24432/C5BW33. CC BY 4.0",
+      "url": "https://archive.ics.uci.edu/dataset/352/online+retail"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "retrieved_utc": "2026-10-10",
+  "notes": "Complete January 2024 yellow taxi file, not a random sample. A seven-day forecasting backtest; not an annual demand study. Reported pickups measure served demand only.",
+  "files": [
+    {
+      "file": "taxi.parquet",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet",
+      "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+      "bytes": 49961641
+    },
+    {
+      "file": "zones.csv",
+      "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv",
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "bytes": 12331
+    }
+  ],
+  "references": [
+    {
+      "label": "NYC TLC trip records and source limitations",
+      "url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page"
+    },
+    {
+      "label": "Yellow taxi data dictionary",
+      "url": "https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf"
+    }
+  ]
+}

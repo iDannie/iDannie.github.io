@@ -1,0 +1,26 @@
+{
+  "retrieved_utc": "2026-10-10",
+  "notes": "Public Mortgage export retrieved 2026-10-10. Local exclusive end-date filter removes January 2025 records despite API documentation. Raw records are not published in this repository. Retrieve data from the official API; historical exports can change and the recorded hash detects revisions. No narratives were present in this export.",
+  "files": [
+    {
+      "file": "complaints.csv",
+      "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?date_received_min=2024-01-01&date_received_max=2025-01-01&product=Mortgage&format=csv&no_aggs=true",
+      "sha256": "323267d23647819303def9d2da9675820be085c5168ab7bfcd07818a51c0f764",
+      "bytes": 6581433
+    }
+  ],
+  "references": [
+    {
+      "label": "CFPB Consumer Complaint Database and representativeness limitations",
+      "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/"
+    },
+    {
+      "label": "CFPB field reference",
+      "url": "https://cfpb.github.io/api/ccdb/fields.html"
+    },
+    {
+      "label": "CFPB API specification",
+      "url": "https://github.com/cfpb/ccdb5-api/blob/main/swagger-config.yaml"
+    }
+  ]
+}

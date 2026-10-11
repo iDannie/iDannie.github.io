@@ -1,0 +1,18 @@
+{
+  "source_rows": 541909,
+  "window_rows": 516384,
+  "excluded_partial_december_rows": 25525,
+  "missing_customer_rows_source": 135080,
+  "exact_duplicate_rows_retained_source": 5268,
+  "source_date_min": "2010-12-01 08:26:00",
+  "source_date_max": "2011-12-09 12:50:00",
+  "positive_purchase_rows": 504993,
+  "positive_value_gbp": 10027891.863998247,
+  "identified_positive_value_share": 0.8369869986465487,
+  "customers": 4297,
+  "sql_pandas_sales_reconcile": true,
+  "cohort_age_zero_equals_size": true,
+  "cohort_rates_bounded": true,
+  "no_unobserved_cohort_cells": true,
+  "temporal_holdout_separated": true
+}

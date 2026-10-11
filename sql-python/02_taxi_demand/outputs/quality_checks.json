@@ -1,0 +1,19 @@
+{
+  "source_rows": 2964624,
+  "demand_rows": 2914490,
+  "operational_rows": 2848985,
+  "excluded_from_demand": 50134,
+  "excluded_from_operations_after_demand": 65505,
+  "outside_month_rows": 18,
+  "unknown_or_nonphysical_pickup_rows": 12018,
+  "nonpositive_or_missing_fare_rows": 38341,
+  "sql_pandas_demand_reconcile": true,
+  "zone_dimension_unique": true,
+  "complete_hourly_grid": true,
+  "unique_zone_hour": true,
+  "temporal_separation": true,
+  "test_is_seven_full_days": true,
+  "weekly_lag_uses_only_training_dates": true,
+  "zone_metric_count_reconcile": true,
+  "panel_count_reconcile": true
+}

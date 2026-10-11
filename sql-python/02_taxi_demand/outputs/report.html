@@ -1,0 +1,102 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#f7f7f0;color:#213c38;font:16px/1.65 system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:45px 5%}header{border-bottom:1px solid #ccd5c5;padding-bottom:30px}h1{font-size:clamp(32px,5vw,52px);line-height:1.12;letter-spacing:-2px;max-width:950px}h2{font-size:24px;line-height:1.3}header>p:first-child{font-size:12px;letter-spacing:2px}.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin:30px 0}.metric{padding:22px;background:#e6ebde;border-radius:8px}.metric strong{display:block;font-size:27px}.metric span{font-size:13px}section{max-width:850px;margin:32px 0}figure{margin:35px 0;border-top:1px solid #ccd5c5;padding-top:20px}img{width:100%;height:auto}figcaption{font-size:13px;color:#56675f}.table{overflow:auto}table{border-collapse:collapse;font-size:13px}th,td{padding:9px;text-align:left;border-bottom:1px solid #ccd5c5}a{color:#245a51}footer{font-size:13px;margin-top:45px}@media print{main{padding:10px}figure{break-inside:avoid}section{break-inside:avoid}}</style><title>Taxi demand and operating patterns</title></head><body><main><nav><a href="../../../index.html#sql-python-projects">Back to portfolio</a> · <a href="https://github.com/iDannie/iDannie.github.io/tree/main/sql-python/02_taxi_demand">View code on GitHub</a></nav><header><p>DANIEL UMEADI / SQL + PYTHON</p><h1>Taxi demand and operating patterns</h1><p>NYC yellow taxi records · January 2024 · Zone-level SQL analysis and a seven-day Python forecast</p></header><div class="metrics"><div class="metric"><strong>2,964,624</strong><span>Source records</span></div><div class="metric"><strong>2,914,490</strong><span>Qualified pickups</span></div><div class="metric"><strong>1,680</strong><span>Test zone-hours</span></div><div class="metric"><strong>14.6%</strong><span>Best holdout WAPE</span></div></div><section><h2>Decision to support</h2><p>Identify pickup patterns for dispatch planning and test whether a calendar model improves a simple weekly planning baseline. Supply, idle time and unmet demand are not available, so no profit-maximizing dispatch policy is claimed.</p></section><section><h2>Findings</h2><p>2,914,490 records meet the date, positive-fare and known-pickup-zone criteria. JFK Airport leads the ten zones selected from January 1-24 training data. On January 25-31, the best of the three reported methods is last_week with 14.6% WAPE. The Poisson model records 24.6%, compared with 14.6% for the previous-week baseline. All errors are calculated at zone-hour level before aggregation.</p></section><section><h2>Method</h2><p>DuckDB joins taxi zones, creates a separate operational subset, ranks routes and builds a complete 744-hour grid for each selected zone. The Poisson regression uses zone, hour, weekday and zone-hour categories. The entire final seven days are held out. Zone selection and baseline means use training data only. No test observations enter prediction features.</p></section><section><h2>Recommended use</h2><p>Start with the best simple baseline indicated by the comparison and validate it on additional months before adoption. Use the hourly profile for staffing discussions, then add vehicle availability, travel time, weather and events. Track zone-level forecast error and service outcomes before claiming an operational improvement.</p></section><section><h2>Limits and data decisions</h2><p>The file contains reported records, not verified unique trips; no trip ID exists, so identical rows are not silently removed. Demand counts exclude nonpositive fares and unknown pickup zones, but do not impose distance/duration filters. A stricter 1-180 minute, 0-100 mile positive-total subset is used for operational comparisons. These analyst-chosen thresholds are documented and audited. Tips recorded for credit-card payments do not capture cash tips. Total amount includes charges and is not driver profit. This is one winter month and one holdout; the lowest test error is a descriptive comparison, not a guarantee. Local timestamp fields are treated as NYC wall time.</p></section><figure><img src="01_zones.png" alt="The top ten zones are selected using the training period only."><figcaption>The top ten zones are selected using the training period only.</figcaption></figure><figure><img src="02_heatmap.png" alt="Full-month descriptive profile; each weekday is normalized by its observed calendar-day count."><figcaption>Full-month descriptive profile; each weekday is normalized by its observed calendar-day count.</figcaption></figure><figure><img src="03_forecast.png" alt="Summed curves aid interpretation; metrics remain at individual zone-hour level."><figcaption>Summed curves aid interpretation; metrics remain at individual zone-hour level.</figcaption></figure><figure><img src="04_comparison.png" alt="WAPE = sum of absolute errors / sum of observed records. No hyperparameter search uses the holdout."><figcaption>WAPE = sum of absolute errors / sum of observed records. No hyperparameter search uses the holdout.</figcaption></figure><section><h2>Backtest metrics</h2><div class="table"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>mae_records_per_zone_hour</th>
+      <th>rmse</th>
+      <th>wape</th>
+      <th>signed_bias_share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>last_week</td>
+      <td>23.301</td>
+      <td>37.112</td>
+      <td>0.146</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <td>weekday_hour_mean</td>
+      <td>26.975</td>
+      <td>40.458</td>
+      <td>0.169</td>
+      <td>-0.037</td>
+    </tr>
+    <tr>
+      <td>poisson</td>
+      <td>39.159</td>
+      <td>55.749</td>
+      <td>0.246</td>
+      <td>-0.037</td>
+    </tr>
+  </tbody>
+</table></div></section><section><h2>High-volume routes</h2><div class="table"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>records</th>
+      <th>median_minutes</th>
+      <th>p90_minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Upper East Side South</td>
+      <td>Upper East Side North</td>
+      <td>21615</td>
+      <td>6.800</td>
+      <td>11.950</td>
+    </tr>
+    <tr>
+      <td>Upper East Side North</td>
+      <td>Upper East Side South</td>
+      <td>19176</td>
+      <td>7.400</td>
+      <td>12.533</td>
+    </tr>
+    <tr>
+      <td>Upper East Side North</td>
+      <td>Upper East Side North</td>
+      <td>14938</td>
+      <td>4.133</td>
+      <td>7.417</td>
+    </tr>
+    <tr>
+      <td>Upper East Side South</td>
+      <td>Upper East Side South</td>
+      <td>13933</td>
+      <td>4.967</td>
+      <td>9.500</td>
+    </tr>
+    <tr>
+      <td>Midtown Center</td>
+      <td>Upper East Side South</td>
+      <td>10134</td>
+      <td>8.367</td>
+      <td>14.783</td>
+    </tr>
+    <tr>
+      <td>Lincoln Square East</td>
+      <td>Upper West Side South</td>
+      <td>8813</td>
+      <td>5.833</td>
+      <td>9.400</td>
+    </tr>
+    <tr>
+      <td>Upper East Side South</td>
+      <td>Midtown Center</td>
+      <td>8712</td>
+      <td>8.217</td>
+      <td>14.248</td>
+    </tr>
+    <tr>
+      <td>Midtown Center</td>
+      <td>Upper East Side North</td>
+      <td>8660</td>
+      <td>12.367</td>
+      <td>20.117</td>
+    </tr>
+  </tbody>
+</table></div></section><footer><h2>Sources and scope</h2><ul><li><a href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page">NYC TLC trip records and source limitations</a></li><li><a href="https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf">Yellow taxi data dictionary</a></li></ul><p>Methods, definitions and reproducibility details are in the project README.</p></footer></main></body></html>

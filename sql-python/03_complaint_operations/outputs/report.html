@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#f7f7f0;color:#213c38;font:16px/1.65 system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:45px 5%}header{border-bottom:1px solid #ccd5c5;padding-bottom:30px}h1{font-size:clamp(32px,5vw,52px);line-height:1.12;letter-spacing:-2px;max-width:950px}h2{font-size:24px;line-height:1.3}header>p:first-child{font-size:12px;letter-spacing:2px}.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin:30px 0}.metric{padding:22px;background:#e6ebde;border-radius:8px}.metric strong{display:block;font-size:27px}.metric span{font-size:13px}section{max-width:850px;margin:32px 0}figure{margin:35px 0;border-top:1px solid #ccd5c5;padding-top:20px}img{width:100%;height:auto}figcaption{font-size:13px;color:#56675f}.table{overflow:auto}table{border-collapse:collapse;font-size:13px}th,td{padding:9px;text-align:left;border-bottom:1px solid #ccd5c5}a{color:#245a51}footer{font-size:13px;margin-top:45px}@media print{main{padding:10px}figure{break-inside:avoid}section{break-inside:avoid}}</style><title>Mortgage complaint operations</title></head><body><main><nav><a href="../../../index.html#sql-python-projects">Back to portfolio</a> · <a href="https://github.com/iDannie/iDannie.github.io/tree/main/sql-python/03_complaint_operations">View code on GitHub</a></nav><header><p>DANIEL UMEADI / SQL + PYTHON</p><h1>Mortgage complaint operations</h1><p>CFPB public complaints · 2024 receipt cohort · SQL workload analysis and Python rate uncertainty</p></header><div class="metrics"><div class="metric"><strong>21,438</strong><span>Complaints</span></div><div class="metric"><strong>1.12%</strong><span>Late response labels</span></div><div class="metric"><strong>78.8%</strong><span>Top two issue share</span></div><div class="metric"><strong>84.5%</strong><span>Same-day forwarding</span></div></div><section><h2>Decision to support</h2><p>Prioritize complaint-process reviews using workload concentration and recorded response timeliness. Keep forwarding delays separate from company resolution time.</p></section><section><h2>Findings</h2><p>21,438 mortgage complaints remain after the local 2024 receipt-date filter. The two largest issues account for 78.8% of workload. The largest issue is &quot;Trouble during payment process&quot; (11,743 records). There are 240 late-response labels among 21,438 known labels (1.12%). 2024-02 has the largest monthly count at 1,942.</p></section><section><h2>Method</h2><p>The pipeline validates complaint IDs, enforces the local date boundary and joins an issue dimension without multiplying rows. SQL computes monthly workload, issue shares, channel mix and calendar-day forwarding intervals. Python adds Wilson intervals to show how small denominators affect observed rates.</p></section><section><h2>Recommended review</h2><p>Review the highest-volume issue workflows first, then inspect issues whose recorded late-response rate is high enough to warrant a case review. Compare channels and sub-products before attributing differences to process quality. Monitor monthly counts and rates separately, with explicit owners for any follow-up.</p></section><section><h2>Interpretation limits</h2><p>These are complaints published by the CFPB, not a representative sample of mortgage customers or verified findings of wrongdoing. Volumes are not market-share-adjusted risk. Timely response does not mean successful resolution. Receipt-to-sending time measures forwarding, not company response duration. Wilson intervals describe binomial uncertainty under an independence model; they do not correct selection bias, company clustering or multiple comparisons. Records were retrieved in October 2026 and reflect the then-current historical snapshot. The API returned January 2025 rows, which the SQL excludes.</p></section><figure><img src="01_monthly.png" alt="Complete 2024 receipt months in the downloaded public snapshot."><figcaption>Complete 2024 receipt months in the downloaded public snapshot.</figcaption></figure><figure><img src="02_issues.png" alt="Workload concentration supports triage; it does not establish incidence among all mortgage customers."><figcaption>Workload concentration supports triage; it does not establish incidence among all mortgage customers.</figcaption></figure><figure><img src="03_timeliness.png" alt="95% Wilson intervals for issues with at least 100 known labels. Denominators and late counts are available in issue_priority.csv."><figcaption>95% Wilson intervals for issues with at least 100 known labels. Denominators and late counts are available in issue_priority.csv.</figcaption></figure><figure><img src="04_forwarding.png" alt="Calendar-day forwarding lag; invalid negative intervals are excluded and counted in the quality audit. Display focuses through approximately the 99th percentile."><figcaption>Calendar-day forwarding lag; invalid negative intervals are excluded and counted in the quality audit. Display focuses through approximately the 99th percentile.</figcaption></figure><section><h2>Response categories</h2><div class="table"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>complaints</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Closed with explanation</td>
+      <td>20321</td>
+    </tr>
+    <tr>
+      <td>Closed with non-monetary relief</td>
+      <td>595</td>
+    </tr>
+    <tr>
+      <td>Closed with monetary relief</td>
+      <td>460</td>
+    </tr>
+    <tr>
+      <td>Untimely response</td>
+      <td>62</td>
+    </tr>
+  </tbody>
+</table></div></section><section><h2>Issue denominators</h2><div class="table"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>issue</th>
+      <th>complaints</th>
+      <th>known_timeliness</th>
+      <th>late_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Trouble during payment process</td>
+      <td>11743</td>
+      <td>11743</td>
+      <td>95.000</td>
+    </tr>
+    <tr>
+      <td>Struggling to pay mortgage</td>
+      <td>5142</td>
+      <td>5142</td>
+      <td>34.000</td>
+    </tr>
+    <tr>
+      <td>Applying for a mortgage or refinancing an existing mortgage</td>
+      <td>2154</td>
+      <td>2154</td>
+      <td>63.000</td>
+    </tr>
+    <tr>
+      <td>Closing on a mortgage</td>
+      <td>1427</td>
+      <td>1427</td>
+      <td>41.000</td>
+    </tr>
+    <tr>
+      <td>Incorrect information on your report</td>
+      <td>531</td>
+      <td>531</td>
+      <td>4.000</td>
+    </tr>
+    <tr>
+      <td>Problem with a company's investigation into an existing problem</td>
+      <td>297</td>
+      <td>297</td>
+      <td>2.000</td>
+    </tr>
+    <tr>
+      <td>Improper use of your report</td>
+      <td>97</td>
+      <td>97</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <td>Credit monitoring or identity theft protection services</td>
+      <td>30</td>
+      <td>30</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>Unable to get your credit report or credit score</td>
+      <td>11</td>
+      <td>11</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>Problem with fraud alerts or security freezes</td>
+      <td>6</td>
+      <td>6</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table></div></section><footer><h2>Sources and scope</h2><ul><li><a href="https://www.consumerfinance.gov/data-research/consumer-complaints/">CFPB Consumer Complaint Database and representativeness limitations</a></li><li><a href="https://cfpb.github.io/api/ccdb/fields.html">CFPB field reference</a></li><li><a href="https://github.com/cfpb/ccdb5-api/blob/main/swagger-config.yaml">CFPB API specification</a></li></ul><p>Methods, definitions and reproducibility details are in the project README.</p></footer></main></body></html>

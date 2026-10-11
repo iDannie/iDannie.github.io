@@ -1,0 +1,12 @@
+{
+  "complaints": 21438,
+  "known_timeliness": 21438,
+  "late_count": 240,
+  "late_rate": 0.01119507416736636,
+  "same_day_forwarding_share": 0.8452280996361601,
+  "top_two_issue_workload_share": 0.7876201138165874,
+  "largest_issue": "Trouble during payment process",
+  "largest_issue_count": 11743,
+  "peak_month": "2024-02",
+  "peak_month_count": 1942
+}
