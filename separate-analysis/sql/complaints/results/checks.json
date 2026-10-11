@@ -1,0 +1,8 @@
+{
+  "valid_unique_ids": true,
+  "monthly_reconcile": true,
+  "issues_reconcile": true,
+  "channels_reconcile": true,
+  "late_labels_reconcile": true,
+  "rates_bounded": true
+}

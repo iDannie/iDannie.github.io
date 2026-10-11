@@ -1,0 +1,7 @@
+{
+  "monthly_reconciles": true,
+  "issues_reconcile": true,
+  "channels_reconcile": true,
+  "late_labels_reconcile": true,
+  "rates_bounded": true
+}

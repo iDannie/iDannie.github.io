@@ -1,0 +1,8 @@
+{
+  "daily_reconciles": true,
+  "zone_reconciles": true,
+  "hour_reconciles": true,
+  "seven_holdout_days": true,
+  "predictions_complete": true,
+  "operations_subset": true
+}

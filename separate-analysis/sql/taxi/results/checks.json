@@ -1,0 +1,8 @@
+{
+  "unique_zone_lookup": true,
+  "daily_reconciles": true,
+  "zones_reconcile": true,
+  "hourly_reconcile": true,
+  "seven_predictions": true,
+  "operations_subset": true
+}

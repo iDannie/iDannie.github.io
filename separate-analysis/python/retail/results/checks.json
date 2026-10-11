@@ -1,0 +1,6 @@
+{
+  "sales_reconcile": true,
+  "customer_segments_reconcile": true,
+  "cohort_zero_is_one": true,
+  "retention_bounded": true
+}

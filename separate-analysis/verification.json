@@ -1,0 +1,82 @@
+{
+  "retail/monthly": {
+    "matched": true,
+    "rows": 12
+  },
+  "retail/cohorts": {
+    "matched": true,
+    "rows": 78
+  },
+  "retail/segments": {
+    "matched": true,
+    "rows": 4
+  },
+  "retail/products": {
+    "matched": true,
+    "rows": 3919
+  },
+  "retail/countries": {
+    "matched": true,
+    "rows": 38
+  },
+  "retail/quality": {
+    "matched": true,
+    "rows": 1
+  },
+  "taxi/daily": {
+    "matched": true,
+    "rows": 31
+  },
+  "taxi/hourly": {
+    "matched": true,
+    "rows": 24
+  },
+  "taxi/zones": {
+    "matched": true,
+    "rows": 258
+  },
+  "taxi/routes": {
+    "matched": true,
+    "rows": 2942
+  },
+  "taxi/payments": {
+    "matched": true,
+    "rows": 5
+  },
+  "taxi/forecast": {
+    "matched": true,
+    "rows": 7
+  },
+  "taxi/forecast_metrics": {
+    "matched": true,
+    "rows": 1
+  },
+  "taxi/quality": {
+    "matched": true,
+    "rows": 1
+  },
+  "complaints/monthly": {
+    "matched": true,
+    "rows": 12
+  },
+  "complaints/issues": {
+    "matched": true,
+    "rows": 10
+  },
+  "complaints/channels": {
+    "matched": true,
+    "rows": 4
+  },
+  "complaints/responses": {
+    "matched": true,
+    "rows": 4
+  },
+  "complaints/forwarding": {
+    "matched": true,
+    "rows": 90
+  },
+  "complaints/quality": {
+    "matched": true,
+    "rows": 1
+  }
+}
