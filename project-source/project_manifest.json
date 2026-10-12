@@ -45,6 +45,6 @@
       "Order-date and product filters",
       "Status trends and product-line breakdowns"
     ],
-    "limitations": "Quantities, order counts and line totals are distinct measures. Status percentages need a consistent denominator; distinct-order calculations require a Desktop check."
+    "limitations": "Status percentages in the product matrix use OrderQty; monetary cards use LineTotal. These are not distinct-order percentages. Filter behaviour and relationships still require Desktop validation."
   }
 ]
