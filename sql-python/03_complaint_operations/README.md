@@ -1,76 +1,31 @@
 # Mortgage complaint operations
 
-Daniel Umeadi · Financial-services operations analytics
+Payment issues dominated workload, while application and closing issues had higher late-response rates.
 
-## Business question
+[Read the full findings report](https://idannie.github.io/sql-python/03_complaint_operations/outputs/report.html)
 
-Which complaint issues dominate workload, and where should response timeliness be reviewed?
+## Executive summary
 
-## Results
+Of 21,438 mortgage complaints received in 2024, 78.8% concerned payment-process difficulties or struggling to pay. Overall, 240 complaints were labelled as receiving a late company response, a rate of 1.12%. Application/refinancing and closing complaints made up 16.7% of volume but 43.3% of late-response labels, identifying a different priority from the largest workload categories.
 
-21,438 mortgage complaints in the 2024 receipt cohort; the two largest issues represent 78.76%. There are 240 late labels (1.12% of known labels).
+## Business objective
 
-Open **outputs/report.html** to read the complete illustrated case study offline. The HTML can also be printed to PDF using a browser.
+The project assessed complaint workload and response timeliness to distinguish high-volume service issues from processes with a disproportionate concentration of late responses.
 
-## Methods
+## Finding 1 · Two issues drove most of the workload
 
-SQL dimensional joins, conditional aggregation, Pareto analysis, date boundaries, missing-data handling, Wilson intervals, source auditing.
+Trouble during the payment process accounted for 11,743 complaints, or 54.8% of the total. Struggling to pay a mortgage added 5,142 complaints, or 24.0%. Together, these categories represented 16,885 complaints. Payment servicing and support for borrowers facing payment difficulties therefore dominate the workload in this dataset.
 
-## Reproduce
+## Finding 2 · Response delays were concentrated elsewhere
 
-Tested with Python 3.12. Create a virtual environment, activate it, and run these commands from this project folder:
+Application/refinancing complaints had a 2.92% late-response rate, and closing complaints had a 2.87% rate, compared with 1.12% overall. Together, they accounted for 104 of the 240 late labels despite representing only 3,581 complaints. Their late-response concentration supports a targeted process review rather than prioritization by volume alone.
 
-```bash
-python -m pip install -r requirements.txt
-python test_logic.py
-python run.py
-```
+## Finding 3 · The busiest month was not the weakest for timeliness
 
-On Windows, create an environment with `py -3.12 -m venv .venv` and activate `.venv\Scripts\activate`. On macOS/Linux use `python3 -m venv .venv` then `source .venv/bin/activate`.
+February had the largest complaint count at 1,942. November had the highest observed late-response rate at 2.10%, with 36 late labels among 1,717 complaints. This difference shows why volume and timeliness need separate monitoring; it does not establish why responses were late.
 
-`run.py` verifies source hashes, rebuilds the DuckDB database and refreshes the results. Missing retail and taxi sources download automatically. CFPB data is downloaded from its official API. Historical exports can change; the source hash detects revisions.
+## Analysis and source code
 
-Open `analysis.ipynb` in Jupyter to explore the saved results or rerun the pipeline.
+SQL queries are in `sql/`; Python analysis is in `run.py` and `analysis.ipynb`. Saved results and charts are in `outputs/`.
 
-## Source and analytical window
-
-CFPB Mortgage CSV export retrieved 2026-10-10; original source SHA-256 recorded in sources.json. Analysis locally enforces 2024-01-01 ≤ receipt < 2025-01-01 because returned max dates differ from API documentation.
-
-- [CFPB Consumer Complaint Database and representativeness limitations](https://www.consumerfinance.gov/data-research/consumer-complaints/)
-- [CFPB field reference](https://cfpb.github.io/api/ccdb/fields.html)
-- [CFPB API specification](https://github.com/cfpb/ccdb5-api/blob/main/swagger-config.yaml)
-
-## Data model and definitions
-
-complaints / complaint_fact: complaint ID; issue_dimension: unique issue; issue_priority: issue; monthly: receipt month.
-
-Late rate = No / (Yes + No) in Timely response?. Forwarding days = calendar-date difference between received and sent, not response time. Same-day share uses nonnegative known forwarding intervals. Wilson intervals use z=1.96, with no claim of representative sampling.
-
-`DATA_DICTIONARY.md` explains fields and exclusions. SQL uses the **DuckDB dialect**; functions such as `date_diff`, `generate_series` and `quantile_cont` may need changes for PostgreSQL or SQL Server.
-
-## Files
-
-- `run.py`: data preparation, SQL orchestration, Python analysis and reporting.
-- `sql/`: numbered, commented SQL transformations and analytical queries.
-- `analysis.ipynb`: analysis walkthrough and saved results.
-- `test_logic.py`: small boundary fixtures that test definitions and exclusions.
-- `sources.json`: URLs, exact byte sizes and SHA-256 hashes.
-- `outputs/`: report, four PNG charts, analytical tables, metrics and quality checks.
-- `common.py`: download, export and presentation helpers.
-
-Source data retains the provider's terms. The MIT license applies to project code.
-
-## Validation
-
-Boundary tests cover date cutoffs, missing values, joins and the meaning of retained records. Pipeline assertions reconcile key SQL totals with independent pandas counts/calculations and check denominators, cohort maturity or forecast separation. See `outputs/quality_checks.json` for the actual run's counts. 
-
-## Limitations
-
-Complaints are selected, not random or market-share-adjusted. They are not verified wrongdoing. Timely response is not resolution. Confidence intervals assume independent binary outcomes and do not account for clustering. No narratives or personal-profile modeling is performed.
-
-
-## Result previews
-
-![02 issues](outputs/02_issues.png)
-
-![03 timeliness](outputs/03_timeliness.png)
+[Technical documentation and reproduction steps](TECHNICAL.md) · [Data definitions](DATA_DICTIONARY.md)

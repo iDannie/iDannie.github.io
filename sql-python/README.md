@@ -1,11 +1,21 @@
-# SQL and Python projects
+# SQL and Python analyses
 
-| Project | Analysis |
-| --- | --- |
-| [Retail retention](01_retail_retention) | Customer cohorts, RFM and repeat-purchase prediction |
-| [Taxi demand](02_taxi_demand) | Pickup patterns, routes and forecast comparison |
-| [Mortgage complaints](03_complaint_operations) | Workload concentration and response timeliness |
+Completed analyses of customer retention, taxi demand and mortgage complaints.
 
-Each project includes Python, DuckDB SQL, a notebook, charts, data definitions and validation checks. Setup instructions and source attribution are in each README.
+## Retail retention and repeat-purchase targeting
 
-[View the portfolio](https://idannie.github.io/#sql-python-projects)
+Customer history identified a high-propensity group with twice the overall repeat-purchase rate.
+
+[Read findings](https://idannie.github.io/sql-python/01_retail_retention/outputs/report.html) · [Source code](01_retail_retention)
+
+## NYC taxi demand and forecast comparison
+
+The previous-week baseline produced lower forecast error than the calendar-based regression model.
+
+[Read findings](https://idannie.github.io/sql-python/02_taxi_demand/outputs/report.html) · [Source code](02_taxi_demand)
+
+## Mortgage complaint operations
+
+Payment issues dominated workload, while application and closing issues had higher late-response rates.
+
+[Read findings](https://idannie.github.io/sql-python/03_complaint_operations/outputs/report.html) · [Source code](03_complaint_operations)

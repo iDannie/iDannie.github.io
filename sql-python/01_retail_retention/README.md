@@ -1,74 +1,31 @@
 # Retail retention and repeat-purchase targeting
 
-Daniel Umeadi · CRM / commercial analytics
+Customer history identified a high-propensity group with twice the overall repeat-purchase rate.
 
-## Business question
+[Read the full findings report](https://idannie.github.io/sql-python/01_retail_retention/outputs/report.html)
 
-Which existing customers should be prioritized for a measured repeat-purchase campaign?
+## Executive summary
 
-## Results
+The analysis covered £10.03 million in positive purchase value and 4,297 identified customers. Only 23.7% of customers returned in the month after their first observed purchase. A logistic regression model identified a top-fifth customer group with a 67.3% November purchase rate, compared with 33.7% across the holdout population. The model also outperformed a simple recency ranking, making it a stronger candidate for prioritizing a retention campaign.
 
-4,297 identified customers; 23.65% weighted month-one retention. November top-fifth propensity lift is 1.99×, against 1.43× for a simple recency rule. Average precision: 0.634; holdout purchase prevalence: 0.337.
+## Business objective
 
-Open **outputs/report.html** to read the complete illustrated case study offline. The HTML can also be printed to PDF using a browser.
+The project evaluated customer retention and compared two ways of prioritizing existing customers for repeat-purchase outreach: a simple recency rule and a model using customer purchase history.
 
-## Methods
+## Finding 1 · Repeat purchasing was concentrated
 
-SQL CTEs, window functions, customer-order modeling, cohort maturity, RFM, logistic regression, out-of-time validation.
+The 1,143 customers classified as recent repeat buyers represented 26.6% of identified customers and £5.66 million in positive purchase value—67.5% of identified-customer value. By contrast, 1,538 customers had only one observed order. This concentration makes retaining active repeat buyers commercially important, while first-to-second-purchase conversion remains a distinct opportunity.
 
-## Reproduce
+## Finding 2 · The first repeat purchase was a weak point
 
-Tested with Python 3.12. Create a virtual environment, activate it, and run these commands from this project folder:
+Weighted month-one retention was 23.7% across cohorts with a complete following month. Most customers therefore did not purchase in the immediately following month. The cohort view separates this early drop-off from later purchasing patterns; a missed month does not by itself establish permanent churn.
 
-```bash
-python -m pip install -r requirements.txt
-python test_logic.py
-python run.py
-```
+## Finding 3 · The model improved customer prioritization
 
-On Windows, create an environment with `py -3.12 -m venv .venv` and activate `.venv\Scripts\activate`. On macOS/Linux use `python3 -m venv .venv` then `source .venv/bin/activate`.
+Among 3,974 customers evaluated in November, the model’s highest-ranked 795 customers had a 67.3% purchase rate. Its 1.99× lift exceeded the recency rule’s 1.43× lift. Average precision was 0.634 and ROC AUC was 0.735. These results demonstrate improved ranking of likely repeat purchasers, rather than a measured increase caused by marketing.
 
-`run.py` verifies source hashes, rebuilds the DuckDB database and refreshes the results. Missing retail and taxi sources download automatically. CFPB data is downloaded from its official API. Historical exports can change; the source hash detects revisions.
+## Analysis and source code
 
-Open `analysis.ipynb` in Jupyter to explore the saved results or rerun the pipeline.
+SQL queries are in `sql/`; Python analysis is in `run.py` and `analysis.ipynb`. Saved results and charts are in `outputs/`.
 
-## Source and analytical window
-
-Full UCI Online Retail, Chen (2015), CC BY 4.0. Source dates: 2010-12-01 to 2011-12-09. Analytical window ends before 2011-12-01.
-
-- [Chen, D. (2015). Online Retail. UCI. DOI: 10.24432/C5BW33. CC BY 4.0](https://archive.ics.uci.edu/dataset/352/online+retail)
-
-## Data model and definitions
-
-source_retail: invoice line → lines/purchases: eligible invoice line → customer_orders: CustomerID × InvoiceNo → rfm: customer; cohorts: first-observed month × age; features: customer × snapshot.
-
-Positive value = sum(Quantity × UnitPrice) where quantity and price are positive and invoice is not a cancellation. Retention = distinct active customers / original cohort customers. Month-one headline weights by cohort sizes and excludes immature cohorts. Model lift = top-fifth purchase rate / holdout purchase rate.
-
-`DATA_DICTIONARY.md` explains fields and exclusions. SQL uses the **DuckDB dialect**; functions such as `date_diff`, `generate_series` and `quantile_cont` may need changes for PostgreSQL or SQL Server.
-
-## Files
-
-- `run.py`: data preparation, SQL orchestration, Python analysis and reporting.
-- `sql/`: numbered, commented SQL transformations and analytical queries.
-- `analysis.ipynb`: analysis walkthrough and saved results.
-- `test_logic.py`: small boundary fixtures that test definitions and exclusions.
-- `sources.json`: URLs, exact byte sizes and SHA-256 hashes.
-- `outputs/`: report, four PNG charts, analytical tables, metrics and quality checks.
-- `common.py`: download, export and presentation helpers.
-
-Source data retains the provider's terms. The MIT license applies to project code.
-
-## Validation
-
-Boundary tests cover date cutoffs, missing values, joins and the meaning of retained records. Pipeline assertions reconcile key SQL totals with independent pandas counts/calculations and check denominators, cohort maturity or forecast separation. See `outputs/quality_checks.json` for the actual run's counts. 
-
-## Limitations
-
-No treatment effect is measured. Customer IDs can be missing. Acquisition dates precede observation for some customers. Identical lines are retained; invoice value is not profit. Model calibration is imperfect in the November holiday period.
-
-
-## Result previews
-
-![02 cohorts](outputs/02_cohorts.png)
-
-![04 holdout](outputs/04_holdout.png)
+[Technical documentation and reproduction steps](TECHNICAL.md) · [Data definitions](DATA_DICTIONARY.md)
