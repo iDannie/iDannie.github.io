@@ -101,4 +101,10 @@ def report(title, subtitle, metrics, sections, figures, tables):
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#f7f7f0;color:#213c38;font:16px/1.65 system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:45px 5%}header{border-bottom:1px solid #ccd5c5;padding-bottom:30px}h1{font-size:clamp(32px,5vw,52px);line-height:1.12;letter-spacing:-2px;max-width:950px}h2{font-size:24px;line-height:1.3}header>p:first-child{font-size:12px;letter-spacing:2px}.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin:30px 0}.metric{padding:22px;background:#e6ebde;border-radius:8px}.metric strong{display:block;font-size:27px}.metric span{font-size:13px}section{max-width:850px;margin:32px 0}figure{margin:35px 0;border-top:1px solid #ccd5c5;padding-top:20px}img{width:100%;height:auto}figcaption{font-size:13px;color:#56675f}.table{overflow:auto}table{border-collapse:collapse;font-size:13px}th,td{padding:9px;text-align:left;border-bottom:1px solid #ccd5c5}a{color:#245a51}footer{font-size:13px;margin-top:45px}@media print{main{padding:10px}figure{break-inside:avoid}section{break-inside:avoid}}</style>'
         + f'<title>{html.escape(title)}</title></head><body><main><nav><a href="../../../index.html#sql-python-projects">Back to portfolio</a> · <a href="https://github.com/iDannie/iDannie.github.io/tree/main/sql-python/{ROOT.name}">View code on GitHub</a></nav><header><p>DANIEL UMEADI / SQL + PYTHON</p><h1>{html.escape(title)}</h1><p>{html.escape(subtitle)}</p></header><div class="metrics">{cards}</div>{content}<footer><h2>Sources and scope</h2><ul>{links}</ul><p>Methods, definitions and reproducibility details are in the project README.</p></footer></main></body></html>'
     )
-    (OUT / "report.html").write_text(page)
+    (OUT / "technical_report.html").write_text(page)
+    # Never publish reviewed narrative against results that have changed.
+    import subprocess, sys
+    subprocess.run(
+        [sys.executable, str(ROOT.parent / "render_report.py"), str(ROOT)],
+        check=True,
+    )

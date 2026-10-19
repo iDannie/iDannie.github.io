@@ -1,0 +1,793 @@
+{
+  "summary.json": {
+    "positive_value_gbp": 10027891.863998247,
+    "customers": 4297,
+    "weighted_month_one_retention": 0.2365374937091092,
+    "test_month": "2011-11",
+    "train_snapshot_months": [
+      "2011-08",
+      "2011-09",
+      "2011-10"
+    ],
+    "test_customers": 3974,
+    "purchase_prevalence": 0.33744338198288876,
+    "average_precision": 0.634419719775543,
+    "roc_auc": 0.7346935712135283,
+    "brier": 0.18630388323206729,
+    "constant_train_rate_brier": 0.22789763864528512,
+    "top_20pct_precision": 0.6729559748427673,
+    "top_20pct_lift": 1.9942781834639502,
+    "recency_rule_top20_lift": 1.4276795219938188,
+    "top_group_n": 795
+  },
+  "quality_checks.json": {
+    "source_rows": 541909,
+    "window_rows": 516384,
+    "excluded_partial_december_rows": 25525,
+    "missing_customer_rows_source": 135080,
+    "exact_duplicate_rows_retained_source": 5268,
+    "source_date_min": "2010-12-01 08:26:00",
+    "source_date_max": "2011-12-09 12:50:00",
+    "positive_purchase_rows": 504993,
+    "positive_value_gbp": 10027891.863998247,
+    "identified_positive_value_share": 0.8369869986465487,
+    "customers": 4297,
+    "sql_pandas_sales_reconcile": true,
+    "cohort_age_zero_equals_size": true,
+    "cohort_rates_bounded": true,
+    "no_unobserved_cohort_cells": true,
+    "temporal_holdout_separated": true
+  },
+  "model_metrics.json": {
+    "test_month": "2011-11",
+    "train_snapshot_months": [
+      "2011-08",
+      "2011-09",
+      "2011-10"
+    ],
+    "test_customers": 3974,
+    "purchase_prevalence": 0.33744338198288876,
+    "average_precision": 0.634419719775543,
+    "roc_auc": 0.7346935712135283,
+    "brier": 0.18630388323206729,
+    "constant_train_rate_brier": 0.22789763864528512,
+    "top_20pct_precision": 0.6729559748427673,
+    "top_20pct_lift": 1.9942781834639502,
+    "recency_rule_top20_lift": 1.4276795219938188,
+    "top_group_n": 795
+  },
+  "segments.csv": [
+    {
+      "segment": "Recent repeat",
+      "customers": "1143",
+      "positive_value_gbp": "5663850.970999993",
+      "median_recency_days": "11.0"
+    },
+    {
+      "segment": "Other repeat",
+      "customers": "1336",
+      "positive_value_gbp": "1648300.2019999991",
+      "median_recency_days": "55.0"
+    },
+    {
+      "segment": "One observed order",
+      "customers": "1538",
+      "positive_value_gbp": "631751.5110000002",
+      "median_recency_days": "125.0"
+    },
+    {
+      "segment": "Lapsed repeat",
+      "customers": "280",
+      "positive_value_gbp": "449312.4300000004",
+      "median_recency_days": "141.0"
+    }
+  ],
+  "cohorts.csv": [
+    {
+      "cohort": "2010-12-01",
+      "age_month": "0",
+      "cohort_size": "885",
+      "active_customers": "885",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "1",
+      "cohort_size": "885",
+      "active_customers": "324",
+      "retention": "0.36610169491525424"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "2",
+      "cohort_size": "885",
+      "active_customers": "286",
+      "retention": "0.3231638418079096"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "3",
+      "cohort_size": "885",
+      "active_customers": "340",
+      "retention": "0.384180790960452"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "4",
+      "cohort_size": "885",
+      "active_customers": "321",
+      "retention": "0.36271186440677966"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "5",
+      "cohort_size": "885",
+      "active_customers": "352",
+      "retention": "0.3977401129943503"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "6",
+      "cohort_size": "885",
+      "active_customers": "321",
+      "retention": "0.36271186440677966"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "7",
+      "cohort_size": "885",
+      "active_customers": "309",
+      "retention": "0.34915254237288135"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "8",
+      "cohort_size": "885",
+      "active_customers": "313",
+      "retention": "0.3536723163841808"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "9",
+      "cohort_size": "885",
+      "active_customers": "350",
+      "retention": "0.3954802259887006"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "10",
+      "cohort_size": "885",
+      "active_customers": "331",
+      "retention": "0.37401129943502825"
+    },
+    {
+      "cohort": "2010-12-01",
+      "age_month": "11",
+      "cohort_size": "885",
+      "active_customers": "445",
+      "retention": "0.5028248587570622"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "0",
+      "cohort_size": "417",
+      "active_customers": "417",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "1",
+      "cohort_size": "417",
+      "active_customers": "92",
+      "retention": "0.22062350119904076"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "2",
+      "cohort_size": "417",
+      "active_customers": "111",
+      "retention": "0.26618705035971224"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "3",
+      "cohort_size": "417",
+      "active_customers": "96",
+      "retention": "0.2302158273381295"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "4",
+      "cohort_size": "417",
+      "active_customers": "134",
+      "retention": "0.3213429256594724"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "5",
+      "cohort_size": "417",
+      "active_customers": "120",
+      "retention": "0.28776978417266186"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "6",
+      "cohort_size": "417",
+      "active_customers": "103",
+      "retention": "0.24700239808153476"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "7",
+      "cohort_size": "417",
+      "active_customers": "101",
+      "retention": "0.2422062350119904"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "8",
+      "cohort_size": "417",
+      "active_customers": "125",
+      "retention": "0.2997601918465228"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "9",
+      "cohort_size": "417",
+      "active_customers": "136",
+      "retention": "0.3261390887290168"
+    },
+    {
+      "cohort": "2011-01-01",
+      "age_month": "10",
+      "cohort_size": "417",
+      "active_customers": "152",
+      "retention": "0.3645083932853717"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "0",
+      "cohort_size": "380",
+      "active_customers": "380",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "1",
+      "cohort_size": "380",
+      "active_customers": "71",
+      "retention": "0.1868421052631579"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "2",
+      "cohort_size": "380",
+      "active_customers": "71",
+      "retention": "0.1868421052631579"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "3",
+      "cohort_size": "380",
+      "active_customers": "108",
+      "retention": "0.28421052631578947"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "4",
+      "cohort_size": "380",
+      "active_customers": "103",
+      "retention": "0.2710526315789474"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "5",
+      "cohort_size": "380",
+      "active_customers": "94",
+      "retention": "0.24736842105263157"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "6",
+      "cohort_size": "380",
+      "active_customers": "96",
+      "retention": "0.25263157894736843"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "7",
+      "cohort_size": "380",
+      "active_customers": "106",
+      "retention": "0.2789473684210526"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "8",
+      "cohort_size": "380",
+      "active_customers": "94",
+      "retention": "0.24736842105263157"
+    },
+    {
+      "cohort": "2011-02-01",
+      "age_month": "9",
+      "cohort_size": "380",
+      "active_customers": "116",
+      "retention": "0.30526315789473685"
+    },
+    {
+      "cohort": "2011-03-01",
+      "age_month": "0",
+      "cohort_size": "452",
+      "active_customers": "452",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-03-01",
+      "age_month": "1",
+      "cohort_size": "452",
+      "active_customers": "68",
+      "retention": "0.1504424778761062"
+    },
+    {
+      "cohort": "2011-03-01",
+      "age_month": "2",
+      "cohort_size": "452",
+      "active_customers": "114",
+      "retention": "0.252212389380531"
+    },
+    {
+      "cohort": "2011-03-01",
+      "age_month": "3",
+      "cohort_size": "452",
+      "active_customers": "90",
+      "retention": "0.19911504424778761"
+    },
+    {
+      "cohort": "2011-03-01",
+      "age_month": "4",
+      "cohort_size": "452",
+      "active_customers": "101",
+      "retention": "0.2234513274336283"
+    },
+    {
+      "cohort": "2011-03-01",
+      "age_month": "5",
+      "cohort_size": "452",
+      "active_customers": "76",
+      "retention": "0.168141592920354"
+    },
+    {
+      "cohort": "2011-03-01",
+      "age_month": "6",
+      "cohort_size": "452",
+      "active_customers": "121",
+      "retention": "0.2676991150442478"
+    },
+    {
+      "cohort": "2011-03-01",
+      "age_month": "7",
+      "cohort_size": "452",
+      "active_customers": "104",
+      "retention": "0.23008849557522124"
+    },
+    {
+      "cohort": "2011-03-01",
+      "age_month": "8",
+      "cohort_size": "452",
+      "active_customers": "126",
+      "retention": "0.27876106194690264"
+    },
+    {
+      "cohort": "2011-04-01",
+      "age_month": "0",
+      "cohort_size": "300",
+      "active_customers": "300",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-04-01",
+      "age_month": "1",
+      "cohort_size": "300",
+      "active_customers": "64",
+      "retention": "0.21333333333333335"
+    },
+    {
+      "cohort": "2011-04-01",
+      "age_month": "2",
+      "cohort_size": "300",
+      "active_customers": "61",
+      "retention": "0.20333333333333334"
+    },
+    {
+      "cohort": "2011-04-01",
+      "age_month": "3",
+      "cohort_size": "300",
+      "active_customers": "63",
+      "retention": "0.21"
+    },
+    {
+      "cohort": "2011-04-01",
+      "age_month": "4",
+      "cohort_size": "300",
+      "active_customers": "59",
+      "retention": "0.19666666666666666"
+    },
+    {
+      "cohort": "2011-04-01",
+      "age_month": "5",
+      "cohort_size": "300",
+      "active_customers": "68",
+      "retention": "0.22666666666666666"
+    },
+    {
+      "cohort": "2011-04-01",
+      "age_month": "6",
+      "cohort_size": "300",
+      "active_customers": "65",
+      "retention": "0.21666666666666667"
+    },
+    {
+      "cohort": "2011-04-01",
+      "age_month": "7",
+      "cohort_size": "300",
+      "active_customers": "78",
+      "retention": "0.26"
+    },
+    {
+      "cohort": "2011-05-01",
+      "age_month": "0",
+      "cohort_size": "284",
+      "active_customers": "284",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-05-01",
+      "age_month": "1",
+      "cohort_size": "284",
+      "active_customers": "54",
+      "retention": "0.19014084507042253"
+    },
+    {
+      "cohort": "2011-05-01",
+      "age_month": "2",
+      "cohort_size": "284",
+      "active_customers": "49",
+      "retention": "0.17253521126760563"
+    },
+    {
+      "cohort": "2011-05-01",
+      "age_month": "3",
+      "cohort_size": "284",
+      "active_customers": "49",
+      "retention": "0.17253521126760563"
+    },
+    {
+      "cohort": "2011-05-01",
+      "age_month": "4",
+      "cohort_size": "284",
+      "active_customers": "59",
+      "retention": "0.20774647887323944"
+    },
+    {
+      "cohort": "2011-05-01",
+      "age_month": "5",
+      "cohort_size": "284",
+      "active_customers": "66",
+      "retention": "0.2323943661971831"
+    },
+    {
+      "cohort": "2011-05-01",
+      "age_month": "6",
+      "cohort_size": "284",
+      "active_customers": "75",
+      "retention": "0.2640845070422535"
+    },
+    {
+      "cohort": "2011-06-01",
+      "age_month": "0",
+      "cohort_size": "242",
+      "active_customers": "242",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-06-01",
+      "age_month": "1",
+      "cohort_size": "242",
+      "active_customers": "42",
+      "retention": "0.17355371900826447"
+    },
+    {
+      "cohort": "2011-06-01",
+      "age_month": "2",
+      "cohort_size": "242",
+      "active_customers": "38",
+      "retention": "0.15702479338842976"
+    },
+    {
+      "cohort": "2011-06-01",
+      "age_month": "3",
+      "cohort_size": "242",
+      "active_customers": "64",
+      "retention": "0.2644628099173554"
+    },
+    {
+      "cohort": "2011-06-01",
+      "age_month": "4",
+      "cohort_size": "242",
+      "active_customers": "56",
+      "retention": "0.23140495867768596"
+    },
+    {
+      "cohort": "2011-06-01",
+      "age_month": "5",
+      "cohort_size": "242",
+      "active_customers": "81",
+      "retention": "0.3347107438016529"
+    },
+    {
+      "cohort": "2011-07-01",
+      "age_month": "0",
+      "cohort_size": "188",
+      "active_customers": "188",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-07-01",
+      "age_month": "1",
+      "cohort_size": "188",
+      "active_customers": "34",
+      "retention": "0.18085106382978725"
+    },
+    {
+      "cohort": "2011-07-01",
+      "age_month": "2",
+      "cohort_size": "188",
+      "active_customers": "39",
+      "retention": "0.2074468085106383"
+    },
+    {
+      "cohort": "2011-07-01",
+      "age_month": "3",
+      "cohort_size": "188",
+      "active_customers": "42",
+      "retention": "0.22340425531914893"
+    },
+    {
+      "cohort": "2011-07-01",
+      "age_month": "4",
+      "cohort_size": "188",
+      "active_customers": "51",
+      "retention": "0.2712765957446808"
+    },
+    {
+      "cohort": "2011-08-01",
+      "age_month": "0",
+      "cohort_size": "169",
+      "active_customers": "169",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-08-01",
+      "age_month": "1",
+      "cohort_size": "169",
+      "active_customers": "35",
+      "retention": "0.20710059171597633"
+    },
+    {
+      "cohort": "2011-08-01",
+      "age_month": "2",
+      "cohort_size": "169",
+      "active_customers": "42",
+      "retention": "0.2485207100591716"
+    },
+    {
+      "cohort": "2011-08-01",
+      "age_month": "3",
+      "cohort_size": "169",
+      "active_customers": "41",
+      "retention": "0.24260355029585798"
+    },
+    {
+      "cohort": "2011-09-01",
+      "age_month": "0",
+      "cohort_size": "299",
+      "active_customers": "299",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-09-01",
+      "age_month": "1",
+      "cohort_size": "299",
+      "active_customers": "70",
+      "retention": "0.23411371237458195"
+    },
+    {
+      "cohort": "2011-09-01",
+      "age_month": "2",
+      "cohort_size": "299",
+      "active_customers": "90",
+      "retention": "0.3010033444816054"
+    },
+    {
+      "cohort": "2011-10-01",
+      "age_month": "0",
+      "cohort_size": "358",
+      "active_customers": "358",
+      "retention": "1.0"
+    },
+    {
+      "cohort": "2011-10-01",
+      "age_month": "1",
+      "cohort_size": "358",
+      "active_customers": "86",
+      "retention": "0.24022346368715083"
+    },
+    {
+      "cohort": "2011-11-01",
+      "age_month": "0",
+      "cohort_size": "323",
+      "active_customers": "323",
+      "retention": "1.0"
+    }
+  ],
+  "holdout_deciles.csv": [
+    {
+      "decile": "1",
+      "customers": "398",
+      "actual_purchase_rate": "0.8115577889447236",
+      "predicted_rate": "0.7308783364018248"
+    },
+    {
+      "decile": "2",
+      "customers": "397",
+      "actual_purchase_rate": "0.5340050377833753",
+      "predicted_rate": "0.48827003833279686"
+    },
+    {
+      "decile": "3",
+      "customers": "398",
+      "actual_purchase_rate": "0.4321608040201005",
+      "predicted_rate": "0.36941964070647854"
+    },
+    {
+      "decile": "4",
+      "customers": "397",
+      "actual_purchase_rate": "0.3677581863979849",
+      "predicted_rate": "0.29339796284215214"
+    },
+    {
+      "decile": "5",
+      "customers": "397",
+      "actual_purchase_rate": "0.29219143576826195",
+      "predicted_rate": "0.24240900456898962"
+    },
+    {
+      "decile": "6",
+      "customers": "398",
+      "actual_purchase_rate": "0.23115577889447236",
+      "predicted_rate": "0.20133263829107154"
+    },
+    {
+      "decile": "7",
+      "customers": "397",
+      "actual_purchase_rate": "0.21914357682619648",
+      "predicted_rate": "0.1726066026104336"
+    },
+    {
+      "decile": "8",
+      "customers": "398",
+      "actual_purchase_rate": "0.18090452261306533",
+      "predicted_rate": "0.14065202830926418"
+    },
+    {
+      "decile": "9",
+      "customers": "397",
+      "actual_purchase_rate": "0.15365239294710328",
+      "predicted_rate": "0.11041720911469606"
+    },
+    {
+      "decile": "10",
+      "customers": "397",
+      "actual_purchase_rate": "0.15113350125944586",
+      "predicted_rate": "0.08996584836919358"
+    }
+  ],
+  "monthly.csv": [
+    {
+      "month": "2010-12-01",
+      "gross_positive_gbp": "823746.1399999646",
+      "credit_value_gbp": "74789.11999999965",
+      "signed_net_gbp": "748957.0199999774",
+      "purchase_invoices": "1559",
+      "net_change_gbp": ""
+    },
+    {
+      "month": "2011-01-01",
+      "gross_positive_gbp": "691364.5600000108",
+      "credit_value_gbp": "131364.29999999967",
+      "signed_net_gbp": "560000.2600000234",
+      "purchase_invoices": "1086",
+      "net_change_gbp": "-188956.75999995403"
+    },
+    {
+      "month": "2011-02-01",
+      "gross_positive_gbp": "523631.8900000278",
+      "credit_value_gbp": "25569.240000000005",
+      "signed_net_gbp": "498062.6500000268",
+      "purchase_invoices": "1100",
+      "net_change_gbp": "-61937.60999999661"
+    },
+    {
+      "month": "2011-03-01",
+      "gross_positive_gbp": "717639.3600000186",
+      "credit_value_gbp": "34372.28000000007",
+      "signed_net_gbp": "683267.0800000157",
+      "purchase_invoices": "1454",
+      "net_change_gbp": "185204.42999998888"
+    },
+    {
+      "month": "2011-04-01",
+      "gross_positive_gbp": "537808.6210000243",
+      "credit_value_gbp": "44601.49999999991",
+      "signed_net_gbp": "493207.1210000249",
+      "purchase_invoices": "1246",
+      "net_change_gbp": "-190059.95899999078"
+    },
+    {
+      "month": "2011-05-01",
+      "gross_positive_gbp": "770536.0200000107",
+      "credit_value_gbp": "47202.50999999987",
+      "signed_net_gbp": "723333.51000001",
+      "purchase_invoices": "1681",
+      "net_change_gbp": "230126.38899998512"
+    },
+    {
+      "month": "2011-06-01",
+      "gross_positive_gbp": "761739.9000000213",
+      "credit_value_gbp": "70616.7799999997",
+      "signed_net_gbp": "691123.1200000222",
+      "purchase_invoices": "1533",
+      "net_change_gbp": "-32210.38999998779"
+    },
+    {
+      "month": "2011-07-01",
+      "gross_positive_gbp": "719221.1910000272",
+      "credit_value_gbp": "37921.079999999994",
+      "signed_net_gbp": "681300.1110000301",
+      "purchase_invoices": "1475",
+      "net_change_gbp": "-9823.008999992162"
+    },
+    {
+      "month": "2011-08-01",
+      "gross_positive_gbp": "759138.3800000148",
+      "credit_value_gbp": "54333.75000000006",
+      "signed_net_gbp": "704804.6300000157",
+      "purchase_invoices": "1361",
+      "net_change_gbp": "23504.518999985652"
+    },
+    {
+      "month": "2011-09-01",
+      "gross_positive_gbp": "1058590.1720000103",
+      "credit_value_gbp": "38902.550000000025",
+      "signed_net_gbp": "1019687.622000011",
+      "purchase_invoices": "1837",
+      "net_change_gbp": "314882.9919999953"
+    },
+    {
+      "month": "2011-10-01",
+      "gross_positive_gbp": "1154979.2999999207",
+      "credit_value_gbp": "84274.62999999973",
+      "signed_net_gbp": "1070704.669999975",
+      "purchase_invoices": "2040",
+      "net_change_gbp": "51017.04799996398"
+    },
+    {
+      "month": "2011-11-01",
+      "gross_positive_gbp": "1509496.3299999905",
+      "credit_value_gbp": "47740.07999999997",
+      "signed_net_gbp": "1461756.2500000016",
+      "purchase_invoices": "2769",
+      "net_change_gbp": "391051.5800000266"
+    }
+  ]
+}

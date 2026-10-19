@@ -1,0 +1,1221 @@
+{
+  "summary.json": {
+    "source_rows": 2964624,
+    "qualified_pickup_records": 2914490,
+    "operational_records": 2848985,
+    "top_training_zone": "JFK Airport",
+    "holdout_zone_hours": 1680,
+    "best_backtest_model": "last_week",
+    "best_wape": 0.14624833749271485,
+    "poisson_wape": 0.24578105286692292,
+    "last_week_wape": 0.14624833749271485
+  },
+  "quality_checks.json": {
+    "source_rows": 2964624,
+    "demand_rows": 2914490,
+    "operational_rows": 2848985,
+    "excluded_from_demand": 50134,
+    "excluded_from_operations_after_demand": 65505,
+    "outside_month_rows": 18,
+    "unknown_or_nonphysical_pickup_rows": 12018,
+    "nonpositive_or_missing_fare_rows": 38341,
+    "sql_pandas_demand_reconcile": true,
+    "zone_dimension_unique": true,
+    "complete_hourly_grid": true,
+    "unique_zone_hour": true,
+    "temporal_separation": true,
+    "test_is_seven_full_days": true,
+    "weekly_lag_uses_only_training_dates": true,
+    "zone_metric_count_reconcile": true,
+    "panel_count_reconcile": true
+  },
+  "backtest_metrics.csv": [
+    {
+      "model": "last_week",
+      "mae_records_per_zone_hour": "23.301190476190477",
+      "rmse": "37.112008709798914",
+      "wape": "0.14624833749271485",
+      "signed_bias_share": "0.0006052273712210649"
+    },
+    {
+      "model": "weekday_hour_mean",
+      "mae_records_per_zone_hour": "26.975396825396828",
+      "rmse": "40.45795397710106",
+      "wape": "0.16930924378957019",
+      "signed_bias_share": "-0.03718599160153623"
+    },
+    {
+      "model": "poisson",
+      "mae_records_per_zone_hour": "39.159358844514",
+      "rmse": "55.74904177719847",
+      "wape": "0.24578105286692292",
+      "signed_bias_share": "-0.03718361897798394"
+    }
+  ],
+  "selected_zones.csv": [
+    {
+      "PULocationID": "132",
+      "pickup_zone": "JFK Airport",
+      "training_records": "113476"
+    },
+    {
+      "PULocationID": "161",
+      "pickup_zone": "Midtown Center",
+      "training_records": "106922"
+    },
+    {
+      "PULocationID": "237",
+      "pickup_zone": "Upper East Side South",
+      "training_records": "106007"
+    },
+    {
+      "PULocationID": "236",
+      "pickup_zone": "Upper East Side North",
+      "training_records": "101850"
+    },
+    {
+      "PULocationID": "230",
+      "pickup_zone": "Times Sq/Theatre District",
+      "training_records": "80766"
+    },
+    {
+      "PULocationID": "162",
+      "pickup_zone": "Midtown East",
+      "training_records": "79762"
+    },
+    {
+      "PULocationID": "142",
+      "pickup_zone": "Lincoln Square East",
+      "training_records": "79613"
+    },
+    {
+      "PULocationID": "186",
+      "pickup_zone": "Penn Station/Madison Sq West",
+      "training_records": "78802"
+    },
+    {
+      "PULocationID": "138",
+      "pickup_zone": "LaGuardia Airport",
+      "training_records": "69041"
+    },
+    {
+      "PULocationID": "239",
+      "pickup_zone": "Upper West Side South",
+      "training_records": "67953"
+    }
+  ],
+  "routes.csv": [
+    {
+      "pickup_zone": "Upper East Side South",
+      "dropoff_zone": "Upper East Side North",
+      "records": "21615",
+      "median_minutes": "6.8",
+      "p90_minutes": "11.95",
+      "median_miles": "1.03",
+      "volume_rank": "1"
+    },
+    {
+      "pickup_zone": "Upper East Side North",
+      "dropoff_zone": "Upper East Side South",
+      "records": "19176",
+      "median_minutes": "7.4",
+      "p90_minutes": "12.533333333333333",
+      "median_miles": "1.0",
+      "volume_rank": "2"
+    },
+    {
+      "pickup_zone": "Upper East Side North",
+      "dropoff_zone": "Upper East Side North",
+      "records": "14938",
+      "median_minutes": "4.133333333333334",
+      "p90_minutes": "7.416666666666667",
+      "median_miles": "0.59",
+      "volume_rank": "3"
+    },
+    {
+      "pickup_zone": "Upper East Side South",
+      "dropoff_zone": "Upper East Side South",
+      "records": "13933",
+      "median_minutes": "4.966666666666667",
+      "p90_minutes": "9.5",
+      "median_miles": "0.6",
+      "volume_rank": "4"
+    },
+    {
+      "pickup_zone": "Midtown Center",
+      "dropoff_zone": "Upper East Side South",
+      "records": "10134",
+      "median_minutes": "8.366666666666667",
+      "p90_minutes": "14.783333333333335",
+      "median_miles": "1.04",
+      "volume_rank": "5"
+    },
+    {
+      "pickup_zone": "Lincoln Square East",
+      "dropoff_zone": "Upper West Side South",
+      "records": "8813",
+      "median_minutes": "5.833333333333333",
+      "p90_minutes": "9.4",
+      "median_miles": "0.98",
+      "volume_rank": "6"
+    },
+    {
+      "pickup_zone": "Upper East Side South",
+      "dropoff_zone": "Midtown Center",
+      "records": "8712",
+      "median_minutes": "8.216666666666667",
+      "p90_minutes": "14.248333333333342",
+      "median_miles": "1.01",
+      "volume_rank": "7"
+    },
+    {
+      "pickup_zone": "Midtown Center",
+      "dropoff_zone": "Upper East Side North",
+      "records": "8660",
+      "median_minutes": "12.366666666666667",
+      "p90_minutes": "20.116666666666667",
+      "median_miles": "1.92",
+      "volume_rank": "8"
+    },
+    {
+      "pickup_zone": "Upper West Side South",
+      "dropoff_zone": "Lincoln Square East",
+      "records": "8526",
+      "median_minutes": "5.85",
+      "p90_minutes": "9.333333333333334",
+      "median_miles": "0.87",
+      "volume_rank": "9"
+    },
+    {
+      "pickup_zone": "Upper West Side South",
+      "dropoff_zone": "Upper West Side North",
+      "records": "8288",
+      "median_minutes": "4.75",
+      "p90_minutes": "7.816666666666666",
+      "median_miles": "0.8",
+      "volume_rank": "10"
+    },
+    {
+      "pickup_zone": "Lenox Hill West",
+      "dropoff_zone": "Upper East Side North",
+      "records": "7685",
+      "median_minutes": "7.35",
+      "p90_minutes": "12.85",
+      "median_miles": "1.05",
+      "volume_rank": "11"
+    },
+    {
+      "pickup_zone": "Upper East Side South",
+      "dropoff_zone": "Midtown East",
+      "records": "7497",
+      "median_minutes": "7.333333333333333",
+      "p90_minutes": "13.740000000000009",
+      "median_miles": "0.94",
+      "volume_rank": "12"
+    },
+    {
+      "pickup_zone": "Upper East Side North",
+      "dropoff_zone": "Midtown Center",
+      "records": "7044",
+      "median_minutes": "12.983333333333333",
+      "p90_minutes": "20.266666666666666",
+      "median_miles": "1.9",
+      "volume_rank": "13"
+    },
+    {
+      "pickup_zone": "Lincoln Square East",
+      "dropoff_zone": "Upper West Side North",
+      "records": "6988",
+      "median_minutes": "7.783333333333333",
+      "p90_minutes": "12.021666666666672",
+      "median_miles": "1.5",
+      "volume_rank": "14"
+    },
+    {
+      "pickup_zone": "Penn Station/Madison Sq West",
+      "dropoff_zone": "Times Sq/Theatre District",
+      "records": "6945",
+      "median_minutes": "11.416666666666666",
+      "p90_minutes": "19.883333333333333",
+      "median_miles": "1.04",
+      "volume_rank": "15"
+    },
+    {
+      "pickup_zone": "Upper West Side North",
+      "dropoff_zone": "Upper West Side South",
+      "records": "6858",
+      "median_minutes": "4.75",
+      "p90_minutes": "7.67166666666667",
+      "median_miles": "0.76",
+      "volume_rank": "16"
+    },
+    {
+      "pickup_zone": "Upper East Side North",
+      "dropoff_zone": "Lenox Hill West",
+      "records": "6830",
+      "median_minutes": "8.016666666666667",
+      "p90_minutes": "13.383333333333333",
+      "median_miles": "1.1",
+      "volume_rank": "17"
+    },
+    {
+      "pickup_zone": "Upper East Side North",
+      "dropoff_zone": "Upper West Side South",
+      "records": "6724",
+      "median_minutes": "8.15",
+      "p90_minutes": "12.211666666666664",
+      "median_miles": "1.4",
+      "volume_rank": "18"
+    },
+    {
+      "pickup_zone": "Upper East Side South",
+      "dropoff_zone": "Lenox Hill West",
+      "records": "6519",
+      "median_minutes": "5.933333333333334",
+      "p90_minutes": "10.766666666666667",
+      "median_miles": "0.71",
+      "volume_rank": "19"
+    },
+    {
+      "pickup_zone": "Yorkville West",
+      "dropoff_zone": "Upper East Side North",
+      "records": "6440",
+      "median_minutes": "4.8",
+      "p90_minutes": "7.785000000000006",
+      "median_miles": "0.64",
+      "volume_rank": "20"
+    },
+    {
+      "pickup_zone": "Upper East Side North",
+      "dropoff_zone": "Upper West Side North",
+      "records": "6300",
+      "median_minutes": "8.058333333333334",
+      "p90_minutes": "11.95",
+      "median_miles": "1.4",
+      "volume_rank": "21"
+    },
+    {
+      "pickup_zone": "Midtown East",
+      "dropoff_zone": "Upper East Side South",
+      "records": "6194",
+      "median_minutes": "7.483333333333333",
+      "p90_minutes": "14.98333333333333",
+      "median_miles": "0.96",
+      "volume_rank": "22"
+    },
+    {
+      "pickup_zone": "Yorkville West",
+      "dropoff_zone": "Lenox Hill West",
+      "records": "6184",
+      "median_minutes": "4.9",
+      "p90_minutes": "9.416666666666666",
+      "median_miles": "0.9",
+      "volume_rank": "23"
+    },
+    {
+      "pickup_zone": "Upper West Side South",
+      "dropoff_zone": "Upper East Side North",
+      "records": "6041",
+      "median_minutes": "8.716666666666667",
+      "p90_minutes": "12.766666666666667",
+      "median_miles": "1.47",
+      "volume_rank": "24"
+    },
+    {
+      "pickup_zone": "Lenox Hill East",
+      "dropoff_zone": "Upper East Side North",
+      "records": "6020",
+      "median_minutes": "9.391666666666666",
+      "p90_minutes": "14.916666666666666",
+      "median_miles": "1.3",
+      "volume_rank": "25"
+    },
+    {
+      "pickup_zone": "Lincoln Square East",
+      "dropoff_zone": "Upper East Side South",
+      "records": "5965",
+      "median_minutes": "8.516666666666667",
+      "p90_minutes": "12.960000000000006",
+      "median_miles": "1.3",
+      "volume_rank": "26"
+    },
+    {
+      "pickup_zone": "Penn Station/Madison Sq West",
+      "dropoff_zone": "Midtown Center",
+      "records": "5960",
+      "median_minutes": "11.7",
+      "p90_minutes": "20.583333333333332",
+      "median_miles": "1.23",
+      "volume_rank": "27"
+    },
+    {
+      "pickup_zone": "Upper East Side South",
+      "dropoff_zone": "Lincoln Square East",
+      "records": "5941",
+      "median_minutes": "8.966666666666667",
+      "p90_minutes": "13.65",
+      "median_miles": "1.27",
+      "volume_rank": "28"
+    },
+    {
+      "pickup_zone": "Lenox Hill West",
+      "dropoff_zone": "Upper East Side South",
+      "records": "5897",
+      "median_minutes": "5.8",
+      "p90_minutes": "10.8",
+      "median_miles": "0.7",
+      "volume_rank": "29"
+    },
+    {
+      "pickup_zone": "Lincoln Square East",
+      "dropoff_zone": "Upper East Side North",
+      "records": "5872",
+      "median_minutes": "11.233333333333333",
+      "p90_minutes": "16.016666666666666",
+      "median_miles": "2.08",
+      "volume_rank": "30"
+    }
+  ],
+  "weekly_profile.csv": [
+    {
+      "weekday": "1",
+      "hour": "0",
+      "mean_records_per_day": "2346.2"
+    },
+    {
+      "weekday": "1",
+      "hour": "1",
+      "mean_records_per_day": "1924.0"
+    },
+    {
+      "weekday": "1",
+      "hour": "2",
+      "mean_records_per_day": "1503.6"
+    },
+    {
+      "weekday": "1",
+      "hour": "3",
+      "mean_records_per_day": "1166.8"
+    },
+    {
+      "weekday": "1",
+      "hour": "4",
+      "mean_records_per_day": "836.0"
+    },
+    {
+      "weekday": "1",
+      "hour": "5",
+      "mean_records_per_day": "746.6"
+    },
+    {
+      "weekday": "1",
+      "hour": "6",
+      "mean_records_per_day": "1400.0"
+    },
+    {
+      "weekday": "1",
+      "hour": "7",
+      "mean_records_per_day": "2493.0"
+    },
+    {
+      "weekday": "1",
+      "hour": "8",
+      "mean_records_per_day": "3340.2"
+    },
+    {
+      "weekday": "1",
+      "hour": "9",
+      "mean_records_per_day": "3582.0"
+    },
+    {
+      "weekday": "1",
+      "hour": "10",
+      "mean_records_per_day": "3772.0"
+    },
+    {
+      "weekday": "1",
+      "hour": "11",
+      "mean_records_per_day": "4079.8"
+    },
+    {
+      "weekday": "1",
+      "hour": "12",
+      "mean_records_per_day": "4527.0"
+    },
+    {
+      "weekday": "1",
+      "hour": "13",
+      "mean_records_per_day": "4660.8"
+    },
+    {
+      "weekday": "1",
+      "hour": "14",
+      "mean_records_per_day": "5229.2"
+    },
+    {
+      "weekday": "1",
+      "hour": "15",
+      "mean_records_per_day": "5361.6"
+    },
+    {
+      "weekday": "1",
+      "hour": "16",
+      "mean_records_per_day": "5217.0"
+    },
+    {
+      "weekday": "1",
+      "hour": "17",
+      "mean_records_per_day": "5536.8"
+    },
+    {
+      "weekday": "1",
+      "hour": "18",
+      "mean_records_per_day": "5611.4"
+    },
+    {
+      "weekday": "1",
+      "hour": "19",
+      "mean_records_per_day": "4621.2"
+    },
+    {
+      "weekday": "1",
+      "hour": "20",
+      "mean_records_per_day": "4024.4"
+    },
+    {
+      "weekday": "1",
+      "hour": "21",
+      "mean_records_per_day": "3577.4"
+    },
+    {
+      "weekday": "1",
+      "hour": "22",
+      "mean_records_per_day": "2688.0"
+    },
+    {
+      "weekday": "1",
+      "hour": "23",
+      "mean_records_per_day": "1946.4"
+    },
+    {
+      "weekday": "2",
+      "hour": "0",
+      "mean_records_per_day": "1246.2"
+    },
+    {
+      "weekday": "2",
+      "hour": "1",
+      "mean_records_per_day": "508.0"
+    },
+    {
+      "weekday": "2",
+      "hour": "2",
+      "mean_records_per_day": "248.0"
+    },
+    {
+      "weekday": "2",
+      "hour": "3",
+      "mean_records_per_day": "183.2"
+    },
+    {
+      "weekday": "2",
+      "hour": "4",
+      "mean_records_per_day": "234.2"
+    },
+    {
+      "weekday": "2",
+      "hour": "5",
+      "mean_records_per_day": "601.4"
+    },
+    {
+      "weekday": "2",
+      "hour": "6",
+      "mean_records_per_day": "1547.2"
+    },
+    {
+      "weekday": "2",
+      "hour": "7",
+      "mean_records_per_day": "3379.8"
+    },
+    {
+      "weekday": "2",
+      "hour": "8",
+      "mean_records_per_day": "4517.2"
+    },
+    {
+      "weekday": "2",
+      "hour": "9",
+      "mean_records_per_day": "4657.4"
+    },
+    {
+      "weekday": "2",
+      "hour": "10",
+      "mean_records_per_day": "4719.6"
+    },
+    {
+      "weekday": "2",
+      "hour": "11",
+      "mean_records_per_day": "5012.4"
+    },
+    {
+      "weekday": "2",
+      "hour": "12",
+      "mean_records_per_day": "5102.6"
+    },
+    {
+      "weekday": "2",
+      "hour": "13",
+      "mean_records_per_day": "5270.2"
+    },
+    {
+      "weekday": "2",
+      "hour": "14",
+      "mean_records_per_day": "5837.0"
+    },
+    {
+      "weekday": "2",
+      "hour": "15",
+      "mean_records_per_day": "6023.6"
+    },
+    {
+      "weekday": "2",
+      "hour": "16",
+      "mean_records_per_day": "5882.6"
+    },
+    {
+      "weekday": "2",
+      "hour": "17",
+      "mean_records_per_day": "6738.4"
+    },
+    {
+      "weekday": "2",
+      "hour": "18",
+      "mean_records_per_day": "6961.2"
+    },
+    {
+      "weekday": "2",
+      "hour": "19",
+      "mean_records_per_day": "5717.4"
+    },
+    {
+      "weekday": "2",
+      "hour": "20",
+      "mean_records_per_day": "5140.0"
+    },
+    {
+      "weekday": "2",
+      "hour": "21",
+      "mean_records_per_day": "5395.2"
+    },
+    {
+      "weekday": "2",
+      "hour": "22",
+      "mean_records_per_day": "4024.8"
+    },
+    {
+      "weekday": "2",
+      "hour": "23",
+      "mean_records_per_day": "2267.2"
+    },
+    {
+      "weekday": "3",
+      "hour": "0",
+      "mean_records_per_day": "1292.6"
+    },
+    {
+      "weekday": "3",
+      "hour": "1",
+      "mean_records_per_day": "519.8"
+    },
+    {
+      "weekday": "3",
+      "hour": "2",
+      "mean_records_per_day": "321.2"
+    },
+    {
+      "weekday": "3",
+      "hour": "3",
+      "mean_records_per_day": "215.2"
+    },
+    {
+      "weekday": "3",
+      "hour": "4",
+      "mean_records_per_day": "250.4"
+    },
+    {
+      "weekday": "3",
+      "hour": "5",
+      "mean_records_per_day": "641.0"
+    },
+    {
+      "weekday": "3",
+      "hour": "6",
+      "mean_records_per_day": "1575.4"
+    },
+    {
+      "weekday": "3",
+      "hour": "7",
+      "mean_records_per_day": "3536.2"
+    },
+    {
+      "weekday": "3",
+      "hour": "8",
+      "mean_records_per_day": "4937.6"
+    },
+    {
+      "weekday": "3",
+      "hour": "9",
+      "mean_records_per_day": "4992.4"
+    },
+    {
+      "weekday": "3",
+      "hour": "10",
+      "mean_records_per_day": "4777.8"
+    },
+    {
+      "weekday": "3",
+      "hour": "11",
+      "mean_records_per_day": "5032.0"
+    },
+    {
+      "weekday": "3",
+      "hour": "12",
+      "mean_records_per_day": "5425.2"
+    },
+    {
+      "weekday": "3",
+      "hour": "13",
+      "mean_records_per_day": "5554.8"
+    },
+    {
+      "weekday": "3",
+      "hour": "14",
+      "mean_records_per_day": "6012.0"
+    },
+    {
+      "weekday": "3",
+      "hour": "15",
+      "mean_records_per_day": "6231.0"
+    },
+    {
+      "weekday": "3",
+      "hour": "16",
+      "mean_records_per_day": "6185.2"
+    },
+    {
+      "weekday": "3",
+      "hour": "17",
+      "mean_records_per_day": "7017.0"
+    },
+    {
+      "weekday": "3",
+      "hour": "18",
+      "mean_records_per_day": "7465.4"
+    },
+    {
+      "weekday": "3",
+      "hour": "19",
+      "mean_records_per_day": "6324.8"
+    },
+    {
+      "weekday": "3",
+      "hour": "20",
+      "mean_records_per_day": "5809.2"
+    },
+    {
+      "weekday": "3",
+      "hour": "21",
+      "mean_records_per_day": "5719.4"
+    },
+    {
+      "weekday": "3",
+      "hour": "22",
+      "mean_records_per_day": "4714.6"
+    },
+    {
+      "weekday": "3",
+      "hour": "23",
+      "mean_records_per_day": "2877.0"
+    },
+    {
+      "weekday": "4",
+      "hour": "0",
+      "mean_records_per_day": "1374.75"
+    },
+    {
+      "weekday": "4",
+      "hour": "1",
+      "mean_records_per_day": "636.75"
+    },
+    {
+      "weekday": "4",
+      "hour": "2",
+      "mean_records_per_day": "359.25"
+    },
+    {
+      "weekday": "4",
+      "hour": "3",
+      "mean_records_per_day": "260.0"
+    },
+    {
+      "weekday": "4",
+      "hour": "4",
+      "mean_records_per_day": "266.25"
+    },
+    {
+      "weekday": "4",
+      "hour": "5",
+      "mean_records_per_day": "627.75"
+    },
+    {
+      "weekday": "4",
+      "hour": "6",
+      "mean_records_per_day": "1610.0"
+    },
+    {
+      "weekday": "4",
+      "hour": "7",
+      "mean_records_per_day": "3473.75"
+    },
+    {
+      "weekday": "4",
+      "hour": "8",
+      "mean_records_per_day": "5029.0"
+    },
+    {
+      "weekday": "4",
+      "hour": "9",
+      "mean_records_per_day": "5085.5"
+    },
+    {
+      "weekday": "4",
+      "hour": "10",
+      "mean_records_per_day": "4965.25"
+    },
+    {
+      "weekday": "4",
+      "hour": "11",
+      "mean_records_per_day": "5081.5"
+    },
+    {
+      "weekday": "4",
+      "hour": "12",
+      "mean_records_per_day": "5419.5"
+    },
+    {
+      "weekday": "4",
+      "hour": "13",
+      "mean_records_per_day": "5554.25"
+    },
+    {
+      "weekday": "4",
+      "hour": "14",
+      "mean_records_per_day": "6119.75"
+    },
+    {
+      "weekday": "4",
+      "hour": "15",
+      "mean_records_per_day": "6608.75"
+    },
+    {
+      "weekday": "4",
+      "hour": "16",
+      "mean_records_per_day": "6676.75"
+    },
+    {
+      "weekday": "4",
+      "hour": "17",
+      "mean_records_per_day": "7764.75"
+    },
+    {
+      "weekday": "4",
+      "hour": "18",
+      "mean_records_per_day": "8347.75"
+    },
+    {
+      "weekday": "4",
+      "hour": "19",
+      "mean_records_per_day": "7137.0"
+    },
+    {
+      "weekday": "4",
+      "hour": "20",
+      "mean_records_per_day": "6408.25"
+    },
+    {
+      "weekday": "4",
+      "hour": "21",
+      "mean_records_per_day": "6664.5"
+    },
+    {
+      "weekday": "4",
+      "hour": "22",
+      "mean_records_per_day": "5927.0"
+    },
+    {
+      "weekday": "4",
+      "hour": "23",
+      "mean_records_per_day": "4006.75"
+    },
+    {
+      "weekday": "5",
+      "hour": "0",
+      "mean_records_per_day": "2141.5"
+    },
+    {
+      "weekday": "5",
+      "hour": "1",
+      "mean_records_per_day": "1171.0"
+    },
+    {
+      "weekday": "5",
+      "hour": "2",
+      "mean_records_per_day": "638.5"
+    },
+    {
+      "weekday": "5",
+      "hour": "3",
+      "mean_records_per_day": "426.75"
+    },
+    {
+      "weekday": "5",
+      "hour": "4",
+      "mean_records_per_day": "364.5"
+    },
+    {
+      "weekday": "5",
+      "hour": "5",
+      "mean_records_per_day": "640.0"
+    },
+    {
+      "weekday": "5",
+      "hour": "6",
+      "mean_records_per_day": "1544.75"
+    },
+    {
+      "weekday": "5",
+      "hour": "7",
+      "mean_records_per_day": "3219.0"
+    },
+    {
+      "weekday": "5",
+      "hour": "8",
+      "mean_records_per_day": "4274.75"
+    },
+    {
+      "weekday": "5",
+      "hour": "9",
+      "mean_records_per_day": "4485.0"
+    },
+    {
+      "weekday": "5",
+      "hour": "10",
+      "mean_records_per_day": "4822.5"
+    },
+    {
+      "weekday": "5",
+      "hour": "11",
+      "mean_records_per_day": "4879.5"
+    },
+    {
+      "weekday": "5",
+      "hour": "12",
+      "mean_records_per_day": "5165.75"
+    },
+    {
+      "weekday": "5",
+      "hour": "13",
+      "mean_records_per_day": "5456.0"
+    },
+    {
+      "weekday": "5",
+      "hour": "14",
+      "mean_records_per_day": "6083.25"
+    },
+    {
+      "weekday": "5",
+      "hour": "15",
+      "mean_records_per_day": "6287.75"
+    },
+    {
+      "weekday": "5",
+      "hour": "16",
+      "mean_records_per_day": "6304.25"
+    },
+    {
+      "weekday": "5",
+      "hour": "17",
+      "mean_records_per_day": "6900.5"
+    },
+    {
+      "weekday": "5",
+      "hour": "18",
+      "mean_records_per_day": "7148.5"
+    },
+    {
+      "weekday": "5",
+      "hour": "19",
+      "mean_records_per_day": "6555.25"
+    },
+    {
+      "weekday": "5",
+      "hour": "20",
+      "mean_records_per_day": "5207.0"
+    },
+    {
+      "weekday": "5",
+      "hour": "21",
+      "mean_records_per_day": "5393.75"
+    },
+    {
+      "weekday": "5",
+      "hour": "22",
+      "mean_records_per_day": "5908.5"
+    },
+    {
+      "weekday": "5",
+      "hour": "23",
+      "mean_records_per_day": "5421.75"
+    },
+    {
+      "weekday": "6",
+      "hour": "0",
+      "mean_records_per_day": "4570.75"
+    },
+    {
+      "weekday": "6",
+      "hour": "1",
+      "mean_records_per_day": "3554.0"
+    },
+    {
+      "weekday": "6",
+      "hour": "2",
+      "mean_records_per_day": "2567.0"
+    },
+    {
+      "weekday": "6",
+      "hour": "3",
+      "mean_records_per_day": "1500.75"
+    },
+    {
+      "weekday": "6",
+      "hour": "4",
+      "mean_records_per_day": "786.0"
+    },
+    {
+      "weekday": "6",
+      "hour": "5",
+      "mean_records_per_day": "401.25"
+    },
+    {
+      "weekday": "6",
+      "hour": "6",
+      "mean_records_per_day": "718.0"
+    },
+    {
+      "weekday": "6",
+      "hour": "7",
+      "mean_records_per_day": "1147.75"
+    },
+    {
+      "weekday": "6",
+      "hour": "8",
+      "mean_records_per_day": "1986.5"
+    },
+    {
+      "weekday": "6",
+      "hour": "9",
+      "mean_records_per_day": "3097.25"
+    },
+    {
+      "weekday": "6",
+      "hour": "10",
+      "mean_records_per_day": "4042.0"
+    },
+    {
+      "weekday": "6",
+      "hour": "11",
+      "mean_records_per_day": "4816.25"
+    },
+    {
+      "weekday": "6",
+      "hour": "12",
+      "mean_records_per_day": "5811.0"
+    },
+    {
+      "weekday": "6",
+      "hour": "13",
+      "mean_records_per_day": "5874.5"
+    },
+    {
+      "weekday": "6",
+      "hour": "14",
+      "mean_records_per_day": "5951.0"
+    },
+    {
+      "weekday": "6",
+      "hour": "15",
+      "mean_records_per_day": "6329.0"
+    },
+    {
+      "weekday": "6",
+      "hour": "16",
+      "mean_records_per_day": "6788.5"
+    },
+    {
+      "weekday": "6",
+      "hour": "17",
+      "mean_records_per_day": "6713.25"
+    },
+    {
+      "weekday": "6",
+      "hour": "18",
+      "mean_records_per_day": "6847.25"
+    },
+    {
+      "weekday": "6",
+      "hour": "19",
+      "mean_records_per_day": "6679.5"
+    },
+    {
+      "weekday": "6",
+      "hour": "20",
+      "mean_records_per_day": "5316.25"
+    },
+    {
+      "weekday": "6",
+      "hour": "21",
+      "mean_records_per_day": "5631.75"
+    },
+    {
+      "weekday": "6",
+      "hour": "22",
+      "mean_records_per_day": "6142.0"
+    },
+    {
+      "weekday": "6",
+      "hour": "23",
+      "mean_records_per_day": "6205.0"
+    },
+    {
+      "weekday": "7",
+      "hour": "0",
+      "mean_records_per_day": "5133.0"
+    },
+    {
+      "weekday": "7",
+      "hour": "1",
+      "mean_records_per_day": "4046.5"
+    },
+    {
+      "weekday": "7",
+      "hour": "2",
+      "mean_records_per_day": "2980.5"
+    },
+    {
+      "weekday": "7",
+      "hour": "3",
+      "mean_records_per_day": "1879.0"
+    },
+    {
+      "weekday": "7",
+      "hour": "4",
+      "mean_records_per_day": "979.0"
+    },
+    {
+      "weekday": "7",
+      "hour": "5",
+      "mean_records_per_day": "408.75"
+    },
+    {
+      "weekday": "7",
+      "hour": "6",
+      "mean_records_per_day": "646.75"
+    },
+    {
+      "weekday": "7",
+      "hour": "7",
+      "mean_records_per_day": "1025.5"
+    },
+    {
+      "weekday": "7",
+      "hour": "8",
+      "mean_records_per_day": "1618.0"
+    },
+    {
+      "weekday": "7",
+      "hour": "9",
+      "mean_records_per_day": "2576.25"
+    },
+    {
+      "weekday": "7",
+      "hour": "10",
+      "mean_records_per_day": "3767.25"
+    },
+    {
+      "weekday": "7",
+      "hour": "11",
+      "mean_records_per_day": "4625.5"
+    },
+    {
+      "weekday": "7",
+      "hour": "12",
+      "mean_records_per_day": "5244.0"
+    },
+    {
+      "weekday": "7",
+      "hour": "13",
+      "mean_records_per_day": "5539.25"
+    },
+    {
+      "weekday": "7",
+      "hour": "14",
+      "mean_records_per_day": "5510.25"
+    },
+    {
+      "weekday": "7",
+      "hour": "15",
+      "mean_records_per_day": "5302.0"
+    },
+    {
+      "weekday": "7",
+      "hour": "16",
+      "mean_records_per_day": "5381.5"
+    },
+    {
+      "weekday": "7",
+      "hour": "17",
+      "mean_records_per_day": "5253.0"
+    },
+    {
+      "weekday": "7",
+      "hour": "18",
+      "mean_records_per_day": "4938.25"
+    },
+    {
+      "weekday": "7",
+      "hour": "19",
+      "mean_records_per_day": "4057.75"
+    },
+    {
+      "weekday": "7",
+      "hour": "20",
+      "mean_records_per_day": "3689.75"
+    },
+    {
+      "weekday": "7",
+      "hour": "21",
+      "mean_records_per_day": "3488.5"
+    },
+    {
+      "weekday": "7",
+      "hour": "22",
+      "mean_records_per_day": "2902.5"
+    },
+    {
+      "weekday": "7",
+      "hour": "23",
+      "mean_records_per_day": "2266.75"
+    }
+  ]
+}

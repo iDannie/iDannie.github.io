@@ -19,3 +19,10 @@ The previous-week baseline produced lower forecast error than the calendar-based
 Payment issues dominated workload, while application and closing issues had higher late-response rates.
 
 [Read findings](https://idannie.github.io/sql-python/03_complaint_operations/outputs/report.html) · [Source code](03_complaint_operations)
+
+
+## Reproduction documentation
+
+- [Retail retention — reproducibility guide](01_retail_retention/TECHNICAL.md)
+- [NYC taxi demand — reproducibility guide](02_taxi_demand/TECHNICAL.md)
+- [Mortgage complaint operations — reproducibility guide](03_complaint_operations/TECHNICAL.md)

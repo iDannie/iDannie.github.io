@@ -1,0 +1,660 @@
+{
+  "summary.json": {
+    "complaints": 21438,
+    "known_timeliness": 21438,
+    "late_count": 240,
+    "late_rate": 0.01119507416736636,
+    "same_day_forwarding_share": 0.8452280996361601,
+    "top_two_issue_workload_share": 0.7876201138165874,
+    "largest_issue": "Trouble during payment process",
+    "largest_issue_count": 11743,
+    "peak_month": "2024-02",
+    "peak_month_count": 1942
+  },
+  "quality_checks.json": {
+    "download_rows": 21473,
+    "analysis_rows": 21438,
+    "excluded_outside_2024_or_product": 35,
+    "invalid_received_dates": 0,
+    "missing_complaint_ids": 0,
+    "duplicate_complaint_ids": 0,
+    "negative_forwarding_intervals": 0,
+    "unknown_timeliness": 0,
+    "sql_pandas_count_reconcile": true,
+    "monthly_total_reconcile": true,
+    "dimension_join_preserves_rows": true,
+    "issue_total_reconcile": true,
+    "late_label_count_reconcile": true,
+    "wilson_intervals_bounded": true
+  },
+  "issue_priority.csv": [
+    {
+      "issue": "Trouble during payment process",
+      "complaints": "11743",
+      "known_timeliness": "11743",
+      "late_count": "95.0",
+      "late_rate": "0.008089925913310057",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.5477656497807631",
+      "cumulative_workload_share": "0.5477656497807631",
+      "wilson_low": "0.006622869791602875",
+      "wilson_high": "0.009878723283424201"
+    },
+    {
+      "issue": "Struggling to pay mortgage",
+      "complaints": "5142",
+      "known_timeliness": "5142",
+      "late_count": "34.0",
+      "late_rate": "0.0066122131466355505",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.23985446403582425",
+      "cumulative_workload_share": "0.7876201138165874",
+      "wilson_low": "0.004735700980700856",
+      "wilson_high": "0.009225397238879008"
+    },
+    {
+      "issue": "Applying for a mortgage or refinancing an existing mortgage",
+      "complaints": "2154",
+      "known_timeliness": "2154",
+      "late_count": "63.0",
+      "late_rate": "0.02924791086350975",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.10047579065211307",
+      "cumulative_workload_share": "0.8880959044687005",
+      "wilson_low": "0.02292711958458303",
+      "wilson_high": "0.037244859674691606"
+    },
+    {
+      "issue": "Closing on a mortgage",
+      "complaints": "1427",
+      "known_timeliness": "1427",
+      "late_count": "41.0",
+      "late_rate": "0.028731604765241767",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.06656404515346581",
+      "cumulative_workload_share": "0.9546599496221663",
+      "wilson_low": "0.021249049439018744",
+      "wilson_high": "0.038744733241048705"
+    },
+    {
+      "issue": "Incorrect information on your report",
+      "complaints": "531",
+      "known_timeliness": "531",
+      "late_count": "4.0",
+      "late_rate": "0.007532956685499058",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.02476910159529807",
+      "cumulative_workload_share": "0.9794290512174643",
+      "wilson_low": "0.0029331588811370712",
+      "wilson_high": "0.019207228104467636"
+    },
+    {
+      "issue": "Problem with a company's investigation into an existing problem",
+      "complaints": "297",
+      "known_timeliness": "297",
+      "late_count": "2.0",
+      "late_rate": "0.006734006734006734",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.013853904282115869",
+      "cumulative_workload_share": "0.9932829554995802",
+      "wilson_low": "0.0018486155014349904",
+      "wilson_high": "0.02421692862544108"
+    },
+    {
+      "issue": "Improper use of your report",
+      "complaints": "97",
+      "known_timeliness": "97",
+      "late_count": "1.0",
+      "late_rate": "0.010309278350515464",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.00452467580931057",
+      "cumulative_workload_share": "0.9978076313088907",
+      "wilson_low": "0.0018221178995736602",
+      "wilson_high": "0.05610635606355266"
+    },
+    {
+      "issue": "Credit monitoring or identity theft protection services",
+      "complaints": "30",
+      "known_timeliness": "30",
+      "late_count": "0.0",
+      "late_rate": "0.0",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.001399384270920795",
+      "cumulative_workload_share": "0.9992070155798115",
+      "wilson_low": "0.0",
+      "wilson_high": "0.113517091390478"
+    },
+    {
+      "issue": "Unable to get your credit report or credit score",
+      "complaints": "11",
+      "known_timeliness": "11",
+      "late_count": "0.0",
+      "late_rate": "0.0",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.0005131075660042915",
+      "cumulative_workload_share": "0.9997201231458158",
+      "wilson_low": "2.7755575615628914e-17",
+      "wilson_high": "0.2588400172488141"
+    },
+    {
+      "issue": "Problem with fraud alerts or security freezes",
+      "complaints": "6",
+      "known_timeliness": "6",
+      "late_count": "0.0",
+      "late_rate": "0.0",
+      "median_forwarding_days": "0.0",
+      "workload_share": "0.000279876854184159",
+      "cumulative_workload_share": "1.0",
+      "wilson_low": "0.0",
+      "wilson_high": "0.3903430336530645"
+    }
+  ],
+  "monthly.csv": [
+    {
+      "month": "2024-01-01",
+      "complaints": "1812",
+      "known_timeliness": "1812",
+      "late_count": "12.0",
+      "late_rate": "0.006622516556291391",
+      "same_day_forwarding_share": "0.8421633554083885",
+      "p90_forwarding_days": "2.0",
+      "month_over_month_change": "",
+      "wilson_low": "0.00379237792368068",
+      "wilson_high": "0.011540236991629113"
+    },
+    {
+      "month": "2024-02-01",
+      "complaints": "1942",
+      "known_timeliness": "1942",
+      "late_count": "14.0",
+      "late_rate": "0.007209062821833162",
+      "same_day_forwarding_share": "0.821318228630278",
+      "p90_forwarding_days": "3.0",
+      "month_over_month_change": "130",
+      "wilson_low": "0.004299113823972832",
+      "wilson_high": "0.012064808090328932"
+    },
+    {
+      "month": "2024-03-01",
+      "complaints": "1893",
+      "known_timeliness": "1893",
+      "late_count": "17.0",
+      "late_rate": "0.008980454305335447",
+      "same_day_forwarding_share": "0.8351822503961965",
+      "p90_forwarding_days": "2.0",
+      "month_over_month_change": "-49",
+      "wilson_low": "0.005614467262386542",
+      "wilson_high": "0.014335327174850601"
+    },
+    {
+      "month": "2024-04-01",
+      "complaints": "1817",
+      "known_timeliness": "1817",
+      "late_count": "16.0",
+      "late_rate": "0.008805723720418272",
+      "same_day_forwarding_share": "0.8558062740781508",
+      "p90_forwarding_days": "2.0",
+      "month_over_month_change": "-76",
+      "wilson_low": "0.0054274504585640595",
+      "wilson_high": "0.014256634087834705"
+    },
+    {
+      "month": "2024-05-01",
+      "complaints": "1713",
+      "known_timeliness": "1713",
+      "late_count": "15.0",
+      "late_rate": "0.008756567425569177",
+      "same_day_forwarding_share": "0.8307063631056626",
+      "p90_forwarding_days": "3.0",
+      "month_over_month_change": "-104",
+      "wilson_low": "0.0053137079493780015",
+      "wilson_high": "0.014397836784859567"
+    },
+    {
+      "month": "2024-06-01",
+      "complaints": "1575",
+      "known_timeliness": "1575",
+      "late_count": "13.0",
+      "late_rate": "0.008253968253968255",
+      "same_day_forwarding_share": "0.8374603174603175",
+      "p90_forwarding_days": "3.0",
+      "month_over_month_change": "-138",
+      "wilson_low": "0.004829951823647492",
+      "wilson_high": "0.014070994287729358"
+    },
+    {
+      "month": "2024-07-01",
+      "complaints": "1737",
+      "known_timeliness": "1737",
+      "late_count": "32.0",
+      "late_rate": "0.018422567645365574",
+      "same_day_forwarding_share": "0.8405296488198043",
+      "p90_forwarding_days": "4.0",
+      "month_over_month_change": "162",
+      "wilson_low": "0.013079478029511916",
+      "wilson_high": "0.02589109804128052"
+    },
+    {
+      "month": "2024-08-01",
+      "complaints": "1861",
+      "known_timeliness": "1861",
+      "late_count": "23.0",
+      "late_rate": "0.012358946802794197",
+      "same_day_forwarding_share": "0.8672756582482536",
+      "p90_forwarding_days": "2.0",
+      "month_over_month_change": "124",
+      "wilson_low": "0.008249389596490816",
+      "wilson_high": "0.018477598904838195"
+    },
+    {
+      "month": "2024-09-01",
+      "complaints": "1778",
+      "known_timeliness": "1778",
+      "late_count": "23.0",
+      "late_rate": "0.012935883014623173",
+      "same_day_forwarding_share": "0.8560179977502812",
+      "p90_forwarding_days": "2.0",
+      "month_over_month_change": "-83",
+      "wilson_low": "0.008635154674281434",
+      "wilson_high": "0.019336804224870996"
+    },
+    {
+      "month": "2024-10-01",
+      "complaints": "1809",
+      "known_timeliness": "1809",
+      "late_count": "22.0",
+      "late_rate": "0.012161415146489774",
+      "same_day_forwarding_share": "0.8529574350469873",
+      "p90_forwarding_days": "2.0",
+      "month_over_month_change": "31",
+      "wilson_low": "0.008044798674460236",
+      "wilson_high": "0.018345593072948918"
+    },
+    {
+      "month": "2024-11-01",
+      "complaints": "1717",
+      "known_timeliness": "1717",
+      "late_count": "36.0",
+      "late_rate": "0.020966802562609202",
+      "same_day_forwarding_share": "0.8468258590564939",
+      "p90_forwarding_days": "2.0",
+      "month_over_month_change": "-92",
+      "wilson_low": "0.015182842670537839",
+      "wilson_high": "0.028889546095517093"
+    },
+    {
+      "month": "2024-12-01",
+      "complaints": "1784",
+      "known_timeliness": "1784",
+      "late_count": "17.0",
+      "late_rate": "0.00952914798206278",
+      "same_day_forwarding_share": "0.8565022421524664",
+      "p90_forwarding_days": "2.0",
+      "month_over_month_change": "67",
+      "wilson_low": "0.005957978357428377",
+      "wilson_high": "0.015208102575021115"
+    }
+  ],
+  "forwarding_distribution.csv": [
+    {
+      "forwarding_days": "0",
+      "complaints": "18120"
+    },
+    {
+      "forwarding_days": "1",
+      "complaints": "774"
+    },
+    {
+      "forwarding_days": "2",
+      "complaints": "415"
+    },
+    {
+      "forwarding_days": "3",
+      "complaints": "309"
+    },
+    {
+      "forwarding_days": "4",
+      "complaints": "248"
+    },
+    {
+      "forwarding_days": "5",
+      "complaints": "258"
+    },
+    {
+      "forwarding_days": "6",
+      "complaints": "251"
+    },
+    {
+      "forwarding_days": "7",
+      "complaints": "169"
+    },
+    {
+      "forwarding_days": "8",
+      "complaints": "105"
+    },
+    {
+      "forwarding_days": "9",
+      "complaints": "66"
+    },
+    {
+      "forwarding_days": "10",
+      "complaints": "64"
+    },
+    {
+      "forwarding_days": "11",
+      "complaints": "62"
+    },
+    {
+      "forwarding_days": "12",
+      "complaints": "63"
+    },
+    {
+      "forwarding_days": "13",
+      "complaints": "41"
+    },
+    {
+      "forwarding_days": "14",
+      "complaints": "59"
+    },
+    {
+      "forwarding_days": "15",
+      "complaints": "38"
+    },
+    {
+      "forwarding_days": "16",
+      "complaints": "23"
+    },
+    {
+      "forwarding_days": "17",
+      "complaints": "25"
+    },
+    {
+      "forwarding_days": "18",
+      "complaints": "12"
+    },
+    {
+      "forwarding_days": "19",
+      "complaints": "17"
+    },
+    {
+      "forwarding_days": "20",
+      "complaints": "22"
+    },
+    {
+      "forwarding_days": "21",
+      "complaints": "22"
+    },
+    {
+      "forwarding_days": "22",
+      "complaints": "19"
+    },
+    {
+      "forwarding_days": "23",
+      "complaints": "10"
+    },
+    {
+      "forwarding_days": "24",
+      "complaints": "10"
+    },
+    {
+      "forwarding_days": "25",
+      "complaints": "11"
+    },
+    {
+      "forwarding_days": "26",
+      "complaints": "5"
+    },
+    {
+      "forwarding_days": "27",
+      "complaints": "7"
+    },
+    {
+      "forwarding_days": "28",
+      "complaints": "8"
+    },
+    {
+      "forwarding_days": "29",
+      "complaints": "7"
+    },
+    {
+      "forwarding_days": "30",
+      "complaints": "11"
+    },
+    {
+      "forwarding_days": "31",
+      "complaints": "8"
+    },
+    {
+      "forwarding_days": "32",
+      "complaints": "7"
+    },
+    {
+      "forwarding_days": "33",
+      "complaints": "8"
+    },
+    {
+      "forwarding_days": "34",
+      "complaints": "10"
+    },
+    {
+      "forwarding_days": "35",
+      "complaints": "7"
+    },
+    {
+      "forwarding_days": "36",
+      "complaints": "9"
+    },
+    {
+      "forwarding_days": "37",
+      "complaints": "5"
+    },
+    {
+      "forwarding_days": "38",
+      "complaints": "9"
+    },
+    {
+      "forwarding_days": "39",
+      "complaints": "9"
+    },
+    {
+      "forwarding_days": "40",
+      "complaints": "7"
+    },
+    {
+      "forwarding_days": "41",
+      "complaints": "10"
+    },
+    {
+      "forwarding_days": "42",
+      "complaints": "6"
+    },
+    {
+      "forwarding_days": "43",
+      "complaints": "7"
+    },
+    {
+      "forwarding_days": "44",
+      "complaints": "4"
+    },
+    {
+      "forwarding_days": "45",
+      "complaints": "4"
+    },
+    {
+      "forwarding_days": "46",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "47",
+      "complaints": "3"
+    },
+    {
+      "forwarding_days": "48",
+      "complaints": "9"
+    },
+    {
+      "forwarding_days": "49",
+      "complaints": "4"
+    },
+    {
+      "forwarding_days": "50",
+      "complaints": "3"
+    },
+    {
+      "forwarding_days": "51",
+      "complaints": "5"
+    },
+    {
+      "forwarding_days": "53",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "54",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "56",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "57",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "58",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "59",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "61",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "62",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "63",
+      "complaints": "4"
+    },
+    {
+      "forwarding_days": "66",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "67",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "68",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "69",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "73",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "76",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "78",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "79",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "88",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "90",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "96",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "101",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "111",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "119",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "131",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "139",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "145",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "148",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "151",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "153",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "155",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "156",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "160",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "169",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "179",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "181",
+      "complaints": "2"
+    },
+    {
+      "forwarding_days": "191",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "193",
+      "complaints": "1"
+    },
+    {
+      "forwarding_days": "253",
+      "complaints": "1"
+    }
+  ]
+}
